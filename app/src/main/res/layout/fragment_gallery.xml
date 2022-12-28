@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/grey2"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            android:layout_height="280dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Convocation - 2022"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/prodsansbold"/>
+                <View
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="2dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@color/grey"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/convoRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/grey2"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            android:layout_height="280dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advitya - 2022"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/prodsansbold"/>
+                <View
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="2dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@color/grey"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/advityaRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/grey2"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            android:layout_height="280dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vichar'22"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/prodsansbold"/>
+                <View
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="2dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@color/grey"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vicharRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/grey2"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            android:layout_height="280dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI - Conclave 2.0"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/prodsansbold"/>
+                <View
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="2dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@color/grey"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aiclubRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

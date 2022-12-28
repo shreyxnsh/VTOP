@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "95114815039",
+    "firebase_url": "https://vtop---vit-bhopal-default-rtdb.firebaseio.com",
+    "project_id": "vtop---vit-bhopal",
+    "storage_bucket": "vtop---vit-bhopal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95114815039:android:31116d21b0de92412aba8a",
+        "android_client_info": {
+          "package_name": "com.shreyxnsh.vtop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95114815039-bfvdit1v9hurl5aurc3pfnrepsa6q8bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkSiRycw7wKMbNHWo2jZNXmOMeinz-ZKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95114815039-bfvdit1v9hurl5aurc3pfnrepsa6q8bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95114815039:android:54ece15800a8d26a2aba8a",
+        "android_client_info": {
+          "package_name": "com.shreyxnsh.vtopadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95114815039-bfvdit1v9hurl5aurc3pfnrepsa6q8bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkSiRycw7wKMbNHWo2jZNXmOMeinz-ZKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95114815039-bfvdit1v9hurl5aurc3pfnrepsa6q8bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_margin="4dp"
+    app:cardElevation="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/text_margin"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:id="@+id/facultyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dr.Virendra Singh Kushwah"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/title_size2"
+                    android:fontFamily="@font/prodsansbold" />
+
+                <TextView
+                    android:id="@+id/facultyDesignation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="2dp"
+                    android:text="Associate Professor"
+                    android:fontFamily="@font/prodsansitalic"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size0" />
+
+                <TextView
+                    android:padding="2dp"
+                    android:id="@+id/facultyEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="virendra.kushwah@vitbhopal.ac.in"
+                    android:fontFamily="@font/prodsansregular"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size0" />
+
+                <TextView
+                    android:id="@+id/facultyCabin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A-309"
+                    android:padding="2dp"
+                    android:fontFamily="@font/prodsansregular"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size1" />
+
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/facultyImage"
+                android:layout_width="40dp"
+                android:layout_marginVertical="16dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.5"
+                android:src="@drawable/facultydemo" />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

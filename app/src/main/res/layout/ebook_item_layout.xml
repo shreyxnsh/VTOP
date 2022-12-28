@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/grey2"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="12dp"
+    android:layout_margin="15dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_margin="@dimen/text_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_picture_as_pdf_24"
+            />
+        <TextView
+            android:id="@+id/ebookName"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_width="match_parent"
+            android:layout_marginRight="40dp"
+            android:layout_height="wrap_content"
+            android:text="Data Structures and Algorithms"
+            android:textSize="@dimen/text_size0"
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/prodsansbold"/>
+
+        <ImageView
+            android:id="@+id/ebookDownload"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_download_24"
+            android:layout_marginLeft="-35dp"/>
+
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

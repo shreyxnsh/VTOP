@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_websites"
+        android:icon="@drawable/website_icon"
+        android:title="VTOP website"/>
+
+    <item android:id="@+id/navigation_ebookpdf"
+        android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+        android:title="E-books"/>
+
+    <item android:id="@+id/navigation_video"
+        android:icon="@drawable/video_icon"
+        android:title="Video Lectures"/>
+
+    <item android:id="@+id/navigation_theme"
+        android:icon="@drawable/theme_icon"
+        android:title="Themes"/>
+
+    <item android:id="@+id/navigation_shareus"
+        android:icon="@drawable/share_icon"
+        android:title="Share"/>
+
+    <item android:id="@+id/navigation_rate"
+        android:icon="@drawable/rate_icon"
+        android:title="Rate us"/>
+
+    <item android:id="@+id/navigation_developer"
+        android:icon="@drawable/android_dev_icon"
+        android:title="Developers"/>
+
+</menu>

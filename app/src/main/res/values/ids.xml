@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="navigation_ebook" type="id" />
+    <item name="navigation_themes" type="id" />
+    <item name="navigation_website" type="id" />
+    <item name="navigation_share" type="id" />
+    <item name="navigation_rateus" type="id" />
+    <item name="navigation_developers" type="id" />
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/about_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/bg_overlay.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/faculty_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/gallery_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/home_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/ic_people.xml" value="0.1" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/label.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/notice_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/drawable/people.xml" value="0.1805" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/activity_ebook.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/activity_full_image_view.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/branch_item.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/drawer_header.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/ebook_item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/faculty_item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/fragment_about_us.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/fragment_faculty.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/fragment_notice.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/gallery_image.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/no_data_found.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/notices_item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/shimmer_animation.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/layout/sliter_item_layout.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/bottom_nav.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/nav_drawer.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/navigation_drawer.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

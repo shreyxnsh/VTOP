@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment android:id="@+id/navigation_home"
+        android:name="com.shreyxnsh.vtop.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+  <fragment android:id="@+id/navigation_notice"
+        android:name="com.shreyxnsh.vtop.ui.notice.NoticeFragment"
+        android:label="Notice"
+        tools:layout="@layout/fragment_notice"/>
+
+  <fragment android:id="@+id/navigation_gallery"
+        android:name="com.shreyxnsh.vtop.ui.gallery.GalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery"/>
+
+  <fragment android:id="@+id/navigation_faculty"
+        android:name="com.shreyxnsh.vtop.ui.faculty.FacultyFragment"
+        android:label="Faculty"
+        tools:layout="@layout/fragment_faculty"/>
+
+  <fragment android:id="@+id/navigation_about"
+        android:name="com.shreyxnsh.vtop.ui.aboutus.AboutUsFragment"
+        android:label="About us"
+        tools:layout="@layout/fragment_about_us"/>
+
+</navigation>
