@@ -8,16 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shreyxnsh.vtop.R;
-import com.shreyxnsh.vtop.ui.notice.NoticeData;
 
-import org.w3c.dom.Text;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.EbookViewHolder> {
@@ -35,6 +32,11 @@ public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.EbookViewHol
     public EbookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.ebook_item_layout,parent,false);
         return new EbookViewHolder(view);
+    }
+
+    public void FilteredList(ArrayList<EbookData> filterList) {
+        list = filterList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -70,6 +72,8 @@ public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.EbookViewHol
     public int getItemCount() {
         return list.size();
     }
+
+
 
     public class EbookViewHolder extends RecyclerView.ViewHolder {
 

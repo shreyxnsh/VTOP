@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,10 +24,10 @@ import java.util.ArrayList;
 
 public class NoticeFragment extends Fragment {
     private RecyclerView noticeRV;
-    private ProgressBar progressBar;
     private ArrayList<NoticeData> list;
     private NoticeAdapter adapter;
     private DatabaseReference reference;
+    private LottieAnimationView progress_anim;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,15 +37,15 @@ public class NoticeFragment extends Fragment {
 
 
         noticeRV = view.findViewById(R.id.noticeRV);
-        progressBar = view.findViewById(R.id.progressBar);
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
+
+        progress_anim = view.findViewById(R.id.progress_anim);
 
         noticeRV.setLayoutManager(new LinearLayoutManager(getContext()));
         noticeRV.setHasFixedSize(true);
 
         getNotice();
         return view;
-
     }
 
     private void getNotice() {
@@ -62,13 +62,13 @@ public class NoticeFragment extends Fragment {
                 }
                 adapter = new NoticeAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
+                progress_anim.setVisibility(View.GONE);
                 noticeRV.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                progressBar.setVisibility(View.GONE);
+                progress_anim.setVisibility(View.GONE);
                 Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

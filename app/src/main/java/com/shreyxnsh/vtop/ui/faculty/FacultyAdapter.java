@@ -37,6 +37,11 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         return list.size();
     }
 
+    public void FilteredList(List<FacultyData> filterList) {
+        list = filterList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public void onBindViewHolder(@NonNull FacultyViewAdapter holder, int position) {
         FacultyData item = list.get(position);

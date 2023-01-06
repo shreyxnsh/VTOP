@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.gallery.GalleryFragment">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/faculty_search"
+        android:hint="Search here"
+        android:textColorHint="@color/textColor"
+        android:fontFamily="@font/prodsansbold"
+        android:drawableLeft="@drawable/search_icon"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="10dp"
+        android:background="@drawable/edittext_search_bg"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/faculty_search"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,17 +35,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/prodsansbold"
                 android:gravity="center"
                 android:text="School of Computer Science &amp; Engineering"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size4"
-                android:textStyle="bold"
-                android:fontFamily="@font/prodsansbold" />
+                android:textStyle="bold" />
 
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="3dp"
+                android:layout_gravity="center"
                 android:layout_marginVertical="8dp"
                 android:background="#c1c1c1" />
 
@@ -43,8 +61,8 @@
                 android:id="@+id/csNoData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
@@ -53,16 +71,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/prodsansbold"
                 android:gravity="center"
                 android:text="School of Mechanical Engineering"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size4"
-                android:textStyle="bold"
-                android:fontFamily="@font/prodsansbold" />
+                android:textStyle="bold" />
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="3dp"
+                android:layout_gravity="center"
                 android:layout_marginVertical="8dp"
                 android:background="#c1c1c1" />
 
@@ -76,9 +95,9 @@
             <LinearLayout
                 android:id="@+id/mechNoData"
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
@@ -87,16 +106,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/prodsansbold"
                 android:gravity="center"
                 android:text="School of Electrical &amp; Electronics Engineering"
                 android:textColor="@color/textColor"
-                android:textStyle="bold"
                 android:textSize="@dimen/text_size4"
-                android:fontFamily="@font/prodsansbold" />
+                android:textStyle="bold" />
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="3dp"
+                android:layout_gravity="center"
                 android:layout_marginVertical="8dp"
                 android:background="#c1c1c1" />
 
@@ -110,9 +130,9 @@
             <LinearLayout
                 android:id="@+id/eeeNoData"
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
@@ -121,16 +141,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/prodsansbold"
                 android:gravity="center"
                 android:text="School of Applied Science &amp; Languages"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size4"
-                android:textStyle="bold"
-                android:fontFamily="@font/prodsansbold" />
+                android:textStyle="bold" />
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="3dp"
+                android:layout_gravity="center"
                 android:layout_marginVertical="8dp"
                 android:background="#c1c1c1" />
 
@@ -144,9 +165,9 @@
             <LinearLayout
                 android:id="@+id/aslNoData"
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
@@ -155,5 +176,15 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progressBar"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:layout_constraintVertical_bias="0.224"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="infinity.json"
+        android:layout_centerInParent="true"
+        app:lottie_loop="true" />
 
-</FrameLayout>
+
+</RelativeLayout>

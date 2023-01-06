@@ -16,16 +16,16 @@
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
-            android:name=".FullImageView"
+            android:name="com.shreyxnsh.vtop.FullImageView"
             android:exported="false" />
         <activity
-            android:name=".ebook.PdfViewerActivity"
+            android:name="com.shreyxnsh.vtop.ebook.PdfViewerActivity"
             android:exported="false" />
         <activity
-            android:name=".ebook.EbookActivity"
+            android:name="com.shreyxnsh.vtop.ebook.EbookActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.shreyxnsh.vtop.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

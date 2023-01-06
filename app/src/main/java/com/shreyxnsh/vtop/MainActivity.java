@@ -1,7 +1,5 @@
 package com.shreyxnsh.vtop;
 
-import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.shreyxnsh.vtop.ebook.EbookActivity;
-import com.smarteist.autoimageslider.SliderView;
+import com.shreyxnsh.vtop.R;
 
 import java.util.Objects;
 

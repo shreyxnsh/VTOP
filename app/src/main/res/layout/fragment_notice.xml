@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.notice.NoticeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -10,10 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_anim"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:layout_constraintVertical_bias="0.224"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="infinity.json"
         android:layout_centerInParent="true"
-        android:id="@+id/progressBar"/>
+        app:lottie_loop="true" />
+
 
 </RelativeLayout>

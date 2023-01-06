@@ -3,7 +3,6 @@ package com.shreyxnsh.vtop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.jsibbold.zoomage.ZoomageView;
 import com.squareup.picasso.Picasso;
