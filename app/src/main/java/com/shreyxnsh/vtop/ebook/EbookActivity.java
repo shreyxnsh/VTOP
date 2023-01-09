@@ -1,6 +1,7 @@
 package com.shreyxnsh.vtop.ebook;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
@@ -38,6 +40,12 @@ public class EbookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("  E-books");
+        actionBar.setIcon(R.drawable.ic_baseline_picture_as_pdf_24);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         ebookRV = findViewById(R.id.ebookRV);
         reference = FirebaseDatabase.getInstance().getReference().child("pdf");
@@ -115,4 +123,7 @@ public class EbookActivity extends AppCompatActivity {
         shimmerFrameLayout.startShimmer();
         super.onRestart();
     }
+
+
+
 }

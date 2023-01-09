@@ -3,6 +3,7 @@ package com.shreyxnsh.vtop.ui.faculty;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
@@ -237,6 +239,12 @@ public class FacultyFragment extends Fragment {
         }else{
             adapter.FilteredList(filterList);
         }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("Faculty Info");
     }
 
 

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -69,5 +70,11 @@ public class HomeFragment extends Fragment {
         //which package to open in the intent?
         intent.setPackage("com.google.android.apps.maps");
         startActivity(intent);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("Dashboard");
     }
 }

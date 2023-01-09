@@ -15,10 +15,11 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/grey2"
+            app:cardBackgroundColor="#4179A3"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
-            android:layout_height="280dp">
+            app:cardCornerRadius="15dp"
+            android:layout_height="290dp">
             
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,16 +32,11 @@
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
-                    android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansbold"/>
-                <View
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="300dp"
-                    android:layout_height="2dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@color/grey"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:layout_margin="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/convoRV"/>
@@ -51,9 +47,10 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/grey2"
+            app:cardBackgroundColor="#4179A3"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
+            app:cardCornerRadius="15dp"
             android:layout_height="280dp">
 
             <LinearLayout
@@ -67,18 +64,13 @@
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
-                    android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansbold"/>
-                <View
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="300dp"
-                    android:layout_height="2dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@color/grey"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
                     android:id="@+id/advityaRV"/>
             </LinearLayout>
 
@@ -87,7 +79,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/grey2"
+            app:cardBackgroundColor="#4179A3"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             android:layout_height="280dp">
@@ -103,18 +95,13 @@
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
-                    android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansbold"/>
-                <View
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="300dp"
-                    android:layout_height="2dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@color/grey"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
                     android:id="@+id/vicharRV"/>
             </LinearLayout>
 
@@ -123,7 +110,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/grey2"
+            app:cardBackgroundColor="#4179A3"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             android:layout_height="280dp">
@@ -139,18 +126,13 @@
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
-                    android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansbold"/>
-                <View
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="300dp"
-                    android:layout_height="2dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@color/grey"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
                     android:id="@+id/aiclubRV"/>
             </LinearLayout>
 

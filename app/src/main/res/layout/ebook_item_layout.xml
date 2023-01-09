@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/grey2"
+    app:cardBackgroundColor="#4179A3"
     app:cardElevation="8dp"
     app:cardCornerRadius="12dp"
     android:layout_margin="15dp"
@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_picture_as_pdf_24"
+            android:src="@drawable/pdf"
             />
         <TextView
             android:id="@+id/ebookName"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Data Structures and Algorithms"
             android:textSize="@dimen/text_size0"
-            android:textColor="@color/textColor"
+            android:textColor="@color/white"
             android:fontFamily="@font/prodsansbold"/>
 
         <ImageView
