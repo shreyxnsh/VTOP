@@ -30,7 +30,7 @@
             android:layout_height="70dp"
             android:layout_marginBottom="4dp"
             app:labelVisibilityMode="selected"
-            app:mbn_backgroundBottomColor="#3c415e"
+            app:mbn_backgroundBottomColor="#3f59fe"
             app:mbn_circleColor="@color/white"
             app:mbn_countBackgroundColor="#ff6f00"
             app:mbn_countTextColor="#ffffff"

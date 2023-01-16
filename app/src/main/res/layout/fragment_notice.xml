@@ -15,10 +15,10 @@
         android:id="@+id/progress_anim"
         android:layout_width="400dp"
         android:layout_height="200dp"
+        android:layout_centerInParent="true"
         app:layout_constraintVertical_bias="0.224"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="infinity.json"
-        android:layout_centerInParent="true"
+        app:lottie_fileName="pr1.json"
         app:lottie_loop="true" />
 
 
