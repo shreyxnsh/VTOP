@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
+        android:background="@drawable/bg_header"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/slider_image"
+            android:layout_width="295dp"
+            android:layout_height="295dp"
+            android:src="@drawable/sl1" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/textlinearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutCompat"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/slider_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:text="@string/heading1"
+            android:textColor="@color/txtcolor"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/slider_subheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heading"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="@string/subhd1"
+            android:textColor="@color/txtcolor"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <View
+                android:id="@+id/rectangle_2"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/rectangle_2_shape" />
+
+            <View
+                android:id="@+id/rectangle_5"
+                android:layout_width="18dp"
+                android:layout_height="4dp"
+                android:background="@drawable/rectangle_5_shape" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
