@@ -16,9 +16,13 @@
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-            android:exported="true" >
+            android:name=".onboarding.OnBoardingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +30,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             android:name=".FullImageView"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             android:name=".ebook.PdfViewerActivity"
             android:exported="false" />
         <activity
@@ -36,9 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -15,4 +15,22 @@
     <string name="vtop_website_link">http://vtop.vitbhopal.ac.in/vtop/initialProcess</string>
     <string name="vityarthi_link">https://vityarthi.com/courses/</string>
 
+
+    // headings
+    <string name="heading1">Want to experience VTOP on small screens ?</string>
+    <string name="heading2">Finding difficulty in accessing the faculty database?</string>
+    <string name="heading3">Missing out latest events and news of the university?</string>
+    <string name="heading4">Searching study material one night before exams ?</string>
+
+    //buttons
+    <string name="nextBtn">Next</string>
+    <string name="skipBtn">Skip</string>
+    <string name="getStarted">Get Started</string>
+
+    //subheading
+    <string name="subhd1">VTOP 2.0 is an attempt to provide user-friendly university administrative features.</string>
+    <string name="subhd2">Now you can access the entire faculty database with just one click.</string>
+    <string name="subhd3">With VTOP 2.0 you can view the notices and event images. By this, you are well versed with the buzz happening in the university.</string>
+    <string name="subhd4">Don’t hesitate to visit the e-book section to view all the course material and recent notice information about the university.</string>
+
 </resources>

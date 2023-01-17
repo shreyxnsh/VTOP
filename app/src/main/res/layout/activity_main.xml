@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
+    tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
+        android:id="@+id/contentView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -28,31 +29,31 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginBottom="4dp"
             app:labelVisibilityMode="selected"
-            app:mbn_backgroundBottomColor="#3f59fe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:mbn_backgroundBottomColor="@color/dark_blue"
             app:mbn_circleColor="@color/white"
             app:mbn_countBackgroundColor="#ff6f00"
             app:mbn_countTextColor="#ffffff"
+
+
             app:mbn_defaultIconColor="@color/white"
-            app:mbn_selectedIconColor="#3c415e"
             app:mbn_rippleColor="#2f424242"
-            app:mbn_shadowColor="#1f212121"
-
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:mbn_selectedIconColor="#3c415e"
+            app:mbn_shadowColor="#1f212121" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/navigation_view"
         app:menu="@menu/navigation_drawer"
-        android:fitsSystemWindows="true"
+        android:background="@color/white"
         app:headerLayout="@layout/drawer_header"
-        app:itemTextAppearance="@font/prodsansregular"
+        app:itemTextAppearance="@style/poppins_bold"
         android:layout_gravity="start"/>
 </androidx.drawerlayout.widget.DrawerLayout>

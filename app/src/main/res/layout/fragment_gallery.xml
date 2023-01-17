@@ -15,7 +15,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="#4179A3"
+            app:cardBackgroundColor="@color/dark_blue"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             app:cardCornerRadius="15dp"
@@ -47,7 +47,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="#4179A3"
+            app:cardBackgroundColor="@color/dark_blue"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             app:cardCornerRadius="15dp"
@@ -79,7 +79,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="#4179A3"
+            app:cardBackgroundColor="@color/dark_blue"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             android:layout_height="280dp">
@@ -110,7 +110,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="#4179A3"
+            app:cardBackgroundColor="@color/dark_blue"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             android:layout_height="280dp">

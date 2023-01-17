@@ -38,8 +38,15 @@
         <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/bottom_nav.xml" value="0.25" />
         <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/nav_drawer.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/shrey/AndroidStudioProjects/VTOP/app/src/main/res/menu/navigation_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/bg_header.xml" value="0.1515" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/bottom_gradient.xml" value="0.1515" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/icon_gradient.xml" value="0.1515" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/next_btn.xml" value="0.1515" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/rectangle_2_shape.xml" value="0.1515" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/drawable/rectangle_5_shape.xml" value="0.1515" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/activity_ebook.xml" value="0.1" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/activity_on_boarding_screen.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.1" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/drawer_header.xml" value="0.25" />
@@ -51,6 +58,7 @@
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/fragment_notice.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/gallery_image.xml" value="0.264" />
+        <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/layout/slider_layout.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/menu/bottom_nav.xml" value="0.25" />
         <entry key="..\:/Users/shrey/Downloads/VTOPuser/app/src/main/res/menu/navigation_drawer.xml" value="0.25" />
       </map>

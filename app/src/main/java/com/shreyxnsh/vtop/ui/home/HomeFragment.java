@@ -41,8 +41,21 @@ public class HomeFragment extends Fragment {
 
         sliderView = (SliderView) getView().findViewById(R.id.sliderView);
         //setting images and text
-        images = new int[]{R.drawable.sv1, R.drawable.sv2,R.drawable.sv3};
-        text = new String[]{"Vellore Institute of Technology, Bhopal", "Boys Hostel", "Students at VIT-B"};
+        images = new int[]{
+                R.drawable.sv1,
+                R.drawable.vit_maingate,
+                R.drawable.classroom_vitb,
+                R.drawable.sv3,
+                R.drawable.sv2
+
+        };
+        text = new String[]{
+                "Vellore Institute of Technology, Bhopal",
+                "VIT-B Entrance",
+                "Classrooms at VIT-B",
+                "Students at VIT-B" ,
+                "Boys Hostel"
+        };
 
         // creating adapter
         adapter = new SliderAdapter(images, text);

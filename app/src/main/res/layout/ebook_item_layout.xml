@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#3f59fe"
+    app:cardBackgroundColor="@color/dark_blue"
     app:cardElevation="8dp"
     app:cardCornerRadius="12dp"
     android:layout_margin="15dp"
@@ -35,7 +35,7 @@
             android:id="@+id/ebookDownload"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_download_24"
+            android:src="@drawable/download_white"
             android:layout_marginLeft="-35dp"/>
 
 

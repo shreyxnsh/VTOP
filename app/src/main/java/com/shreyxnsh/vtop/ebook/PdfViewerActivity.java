@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.barteksc.pdfviewer.PDFView;
