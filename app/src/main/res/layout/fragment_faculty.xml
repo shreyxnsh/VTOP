@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.gallery.GalleryFragment">
+
     <EditText
+        android:id="@+id/faculty_search"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:id="@+id/faculty_search"
-        android:hint="Search here"
-        android:textColorHint="@color/textColor"
-        android:fontFamily="@font/prodsansbold"
-        android:drawableLeft="@drawable/search_icon"
-        android:layout_marginTop="10dp"
-        android:padding="8dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_search_bg"
+        android:drawableLeft="@drawable/search_icon"
         android:drawablePadding="10dp"
-        android:background="@drawable/edittext_search_bg"/>
+        android:fontFamily="@font/prodsansbold"
+        android:hint="Search here"
+        android:padding="8dp"
+        android:textColorHint="@color/textColor" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/faculty_search"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/prodsansbold"
-                android:gravity="center"
-                android:text="School of Computer Science &amp; Engineering"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size4"
-                android:textStyle="bold" />
-
-
-            <View
-                android:layout_width="400dp"
-                android:layout_height="3dp"
-                android:layout_gravity="center"
-                android:layout_marginVertical="8dp"
-                android:background="#c1c1c1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/csDepartment"
@@ -67,23 +49,6 @@
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/prodsansbold"
-                android:gravity="center"
-                android:text="School of Mechanical Engineering"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size4"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="400dp"
-                android:layout_height="3dp"
-                android:layout_gravity="center"
-                android:layout_marginVertical="8dp"
-                android:background="#c1c1c1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/mechDepartment"
@@ -102,23 +67,6 @@
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/prodsansbold"
-                android:gravity="center"
-                android:text="School of Electrical &amp; Electronics Engineering"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size4"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="400dp"
-                android:layout_height="3dp"
-                android:layout_gravity="center"
-                android:layout_marginVertical="8dp"
-                android:background="#c1c1c1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eeeDepartment"
@@ -137,23 +85,6 @@
                 <include layout="@layout/no_data_found" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/prodsansbold"
-                android:gravity="center"
-                android:text="School of Applied Science &amp; Languages"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size4"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="400dp"
-                android:layout_height="3dp"
-                android:layout_gravity="center"
-                android:layout_marginVertical="8dp"
-                android:background="#c1c1c1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/aslDepartment"
@@ -179,11 +110,11 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar"
         android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
         app:layout_constraintVertical_bias="0.224"
         app:lottie_autoPlay="true"
         app:lottie_fileName="pr1.json"
-        android:layout_centerInParent="true"
         app:lottie_loop="true" />
 
 

@@ -9,16 +9,19 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/vtopicon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/vtopicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-            android:name=".onboarding.OnBoardingScreen"
+            android:name=".ui.developers.Developers"
             android:exported="false" />
+        <activity
+            android:name=".onboarding.OnBoardingScreen"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
@@ -30,19 +33,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             android:name=".FullImageView"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             android:name=".ebook.PdfViewerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ebook.EbookActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

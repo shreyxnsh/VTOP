@@ -1,5 +1,6 @@
 package com.shreyxnsh.vtop;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,8 +24,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.shreyxnsh.vtop.ebook.EbookActivity;
 import com.shreyxnsh.vtop.ui.aboutus.AboutUsFragment;
+import com.shreyxnsh.vtop.ui.developers.Developers;
 import com.shreyxnsh.vtop.ui.faculty.FacultyFragment;
 import com.shreyxnsh.vtop.ui.gallery.GalleryFragment;
 import com.shreyxnsh.vtop.ui.home.HomeFragment;
@@ -51,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("notification");
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -123,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         animateNavigationView();
     }
 
+    @SuppressLint("ResourceAsColor")
     private void animateNavigationView() {
         //Add any color or remove it to use the default one!
         //To make it transparent use Color.Transparent in side setScrimColor();
@@ -174,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent;
         switch (item.getItemId()) {
             case R.id.navigation_developer:
-                Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, Developers.class));
                 break;
             case R.id.navigation_video:
                 uri = Uri.parse(getString(R.string.vityarthi_link));
