@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/dark_blue"
+    app:cardElevation="15dp"
+    app:cardMaxElevation="15dp"
+    app:cardCornerRadius="15dp"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_margin="6dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,7 +22,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/facultydemo"/>
+                android:src="@drawable/vtopiconwithbg"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,9 +35,9 @@
                     android:text="VIT - B "
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/prodsansbold"
-                    android:textColor="@color/textColor"/>
+                    android:textSize="21sp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:textColor="@color/white"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -41,9 +47,9 @@
                         android:layout_height="wrap_content"
                         android:text="Date : "
                         android:layout_marginTop="7dp"
-                        android:layout_marginLeft="16dp"
-                        android:fontFamily="@font/prodsansitalic"
-                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="14dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size0"/>
                     <TextView
                         android:id="@+id/date"
@@ -51,18 +57,18 @@
                         android:layout_height="wrap_content"
                         android:text="22 November, 2022"
                         android:layout_marginTop="7dp"
-                        android:layout_marginLeft="4dp"
-                        android:fontFamily="@font/prodsansitalic"
-                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="2dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size0"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Time : "
                         android:layout_marginTop="7dp"
-                        android:layout_marginLeft="16dp"
-                        android:fontFamily="@font/prodsansitalic"
-                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size0"/>
                     <TextView
                         android:id="@+id/time"
@@ -70,9 +76,9 @@
                         android:layout_height="wrap_content"
                         android:text="12:00 p.m"
                         android:layout_marginTop="7dp"
-                        android:layout_marginLeft="4dp"
-                        android:fontFamily="@font/prodsansitalic"
-                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="2dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size0"/>
 
 
@@ -87,10 +93,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notice title demo"
-            android:textSize="17sp"
-            android:fontFamily="@font/prodsansregular"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsemibold"
             android:layout_marginVertical="@dimen/text_margin"
-            android:textColor="@color/textColor"
+            android:textColor="@color/white"
             />
 
         <ImageView

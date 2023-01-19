@@ -64,7 +64,7 @@ public class NoticeFragment extends Fragment {
                     // getting data from NoticeData class
                     NoticeData data = snapshot.getValue(NoticeData.class);
                     // adding in the list
-                    list.add(data);
+                    list.add(0,data);
                 }
                 adapter = new NoticeAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
