@@ -89,7 +89,7 @@ public class FacultyFragment extends Fragment {
                     cs.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        cseList.add(data);
+                        cseList.add(0,data);
 //                        list.addAll(cseList);
                     }
                     cs.setHasFixedSize(true);
@@ -122,7 +122,7 @@ public class FacultyFragment extends Fragment {
                     mech.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        mecList.add(data);
+                        mecList.add(0,data);
 //                        list.addAll(mecList);
 
                     }
@@ -156,7 +156,7 @@ public class FacultyFragment extends Fragment {
                     eee.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        eeeList.add(data);
+                        eeeList.add(0,data);
 //                        list.addAll(eeeList);
                         progressBar.setVisibility(View.GONE);
 
@@ -190,7 +190,7 @@ public class FacultyFragment extends Fragment {
                     asl.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        aslList.add(data);
+                        aslList.add(0,data);
 //                        list.addAll(aslList);
 
                     }

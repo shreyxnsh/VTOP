@@ -22,12 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginHorizontal="@dimen/text_margin"
-            android:layout_marginTop="@dimen/text_margin"
-            android:fontFamily="@font/prodsansregular"
+            android:layout_marginHorizontal="12sp"
+            android:layout_marginTop="12sp"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/aboutclg"
             android:textColor="@color/textColor"
-            android:textSize="@dimen/text_size2" />
+            android:textSize="14sp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/text_margin"
-                android:fontFamily="@font/prodsansregular"
+                android:fontFamily="@font/poppinsmedium"
                 android:text="@string/acre"
                 android:textColor="@color/textColor" />
         </LinearLayout>
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/text_margin"
-                android:fontFamily="@font/prodsansregular"
+                android:fontFamily="@font/poppinsmedium"
                 android:text="@string/caltech"
                 android:textColor="@color/textColor" />
         </LinearLayout>
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/text_margin"
-                android:fontFamily="@font/prodsansregular"
+                android:fontFamily="@font/poppinsmedium"
                 android:text="@string/ffcs"
                 android:textColor="@color/textColor" />
         </LinearLayout>
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/text_margin"
-                android:fontFamily="@font/prodsansregular"
+                android:fontFamily="@font/poppinsmedium"
                 android:text="@string/lab"
                 android:textColor="@color/textColor" />
         </LinearLayout>
@@ -116,7 +116,7 @@
             android:textSize="@dimen/title_size1"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"
-            android:fontFamily="@font/prodsansbold"/>
+            android:fontFamily="@font/poppinsemibold"/>
 
         <androidx.viewpager.widget.ViewPager
             android:padding="15dp"
@@ -142,7 +142,7 @@
                 android:textSize="@dimen/title_size1"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/prodsansbold"/>
+                android:fontFamily="@font/poppinsemibold"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                 android:textSize="@dimen/text_size1"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/prodsansregular"/>
+                android:fontFamily="@font/poppinsmedium"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,7 +164,7 @@
                 android:textSize="@dimen/text_size1"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/prodsansregular"/>
+                android:fontFamily="@font/poppinsmedium"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                 android:textSize="@dimen/text_size1"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/prodsansregular"/>
+                android:fontFamily="@font/poppinsmedium"/>
 
             <ImageView
                 android:id="@+id/map"

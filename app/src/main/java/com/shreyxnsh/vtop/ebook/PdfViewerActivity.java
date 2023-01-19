@@ -2,6 +2,7 @@ package com.shreyxnsh.vtop.ebook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -24,10 +25,12 @@ public class PdfViewerActivity extends AppCompatActivity {
     private LottieAnimationView pdf_progress;
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_viewer);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         url = getIntent().getStringExtra("pdfUrl");
         pdfView = findViewById(R.id.pdfView);

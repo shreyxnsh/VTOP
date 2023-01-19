@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -37,10 +38,12 @@ public class EbookActivity extends AppCompatActivity {
     ShimmerFrameLayout shimmerFrameLayout;
     private LinearLayout shimmerLinearLayout;
     private EditText pdf_search;
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("  E-books");
