@@ -18,9 +18,9 @@ Welcome to VTOP, the official college application for Vellore Institute of Techn
 <img src="https://user-images.githubusercontent.com/88729972/213798650-247993b5-dd70-4901-bab2-bee3a0dde28e.png" width="30%"></img> 
 <img src="https://user-images.githubusercontent.com/88729972/213798653-910816f8-ecd2-4a78-a78d-c5f5982eb1e7.png" width="30%"></img> 
 <img src="https://user-images.githubusercontent.com/88729972/213798654-ecb6f601-dbde-4866-b896-fb67ee86fcab.png" width="30%"></img> 
-<img src="https://user-images.githubusercontent.com/85361211/190183757-0a31324d-71fa-4792-bfcc-bf981b19bb44.png" width="30%"></img> 
-<img src="https://user-images.githubusercontent.com/88729972/213798661-a8c821e6-df9a-4fd4-a8e4-7741192467f3.png" width="30%"></img> 
-<img src="https://user-images.githubusercontent.com/88729972/213798663-1fc855e6-3443-4884-8d58-683216258536.png" width="30%"></img>
+<img src="https://user-images.githubusercontent.com/88729972/213798663-1fc855e6-3443-4884-8d58-683216258536.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798656-71596a63-0968-4bba-9f76-ae098fb1e65c.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798661-a8c821e6-df9a-4fd4-a8e4-7741192467f3.png" width="30%"></img>
 
 
 ## Libraries used :
