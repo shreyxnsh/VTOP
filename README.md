@@ -58,7 +58,7 @@ Clone this project using CLI
 ```
 
 
-# MIT License
+## MIT License
 
 Copyright (c) 2023 shreyxnsh
 
