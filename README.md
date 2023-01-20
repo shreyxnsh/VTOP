@@ -12,7 +12,15 @@ Welcome to VTOP, the official college application for Vellore Institute of Techn
 
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/88729972/213798649-aab7566b-5bcf-418c-877a-1acc1de28a93.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/88729972/213798641-d545c372-144c-4090-b43a-75c23bb30f2b.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/88729972/213798647-d1b01135-2624-4738-b5d5-dcce18a64def.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183752-9cf463fa-1f45-4230-94c2-b55af1e1a48a.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183757-0a31324d-71fa-4792-bfcc-bf981b19bb44.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183759-53ba95b1-5c4e-4dc5-8321-ee6fca68122c.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183757-0a31324d-71fa-4792-bfcc-bf981b19bb44.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183759-53ba95b1-5c4e-4dc5-8321-ee6fca68122c.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/85361211/190183759-53ba95b1-5c4e-4dc5-8321-ee6fca68122c.png" width="30%"></img>
+<img src="https://user-images.githubusercontent.com/88729972/213798649-aab7566b-5bcf-418c-877a-1acc1de28a93.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798641-d545c372-144c-4090-b43a-75c23bb30f2b.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798647-d1b01135-2624-4738-b5d5-dcce18a64def.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798650-247993b5-dd70-4901-bab2-bee3a0dde28e.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798653-910816f8-ecd2-4a78-a78d-c5f5982eb1e7.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798654-ecb6f601-dbde-4866-b896-fb67ee86fcab.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/85361211/190183757-0a31324d-71fa-4792-bfcc-bf981b19bb44.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798661-a8c821e6-df9a-4fd4-a8e4-7741192467f3.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/88729972/213798663-1fc855e6-3443-4884-8d58-683216258536.png" width="30%"></img>
 
 
 ## Libraries used :
