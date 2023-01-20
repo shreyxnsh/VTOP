@@ -6,7 +6,7 @@ Welcome to VTOP, the official college application for Vellore Institute of Techn
 
 - 👨‍🏫 Faculty Database : Now, you can search amongst faculties and get thier data within seconds. 
 - 🔔 Notices Section : No need to open Gmail! Get all the notices on your fingertips. 
-- 📖 E-books : Stuck in finding pdf? No worries, we've got you covered. Access all the learning material on VTOp
+- 📖 E-books : Stuck in finding pdf? No worries, we've got you covered. Access all the learning material on VTOP
 - ➗ CGPA Calculator : Got your marks, but where do you stand? Know your GPA / CGPA by entering your marks and course credits.
 - 🥳 Events : It was a great event! What about the memories? View all the event images in a single click!
 
