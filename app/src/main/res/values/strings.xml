@@ -32,5 +32,13 @@
     <string name="subhd2">Now you can access the entire faculty database with just one click.</string>
     <string name="subhd3">With VTOP 2.0 you can view the notices and event images. By this, you are well versed with the buzz happening in the university.</string>
     <string name="subhd4">Don’t hesitate to visit the e-book section to view all the course material and recent notice information about the university.</string>
+    <string name="intro">Hey! I’m an Android Developer and an undergrad student of VIT-B (2021-25). Though I started learning android way back, but the idea of creating VTOP aroused due to the hassle which I faced in accessing the website and the opportunities I missed. Yet, no worries this problem is now being tackled!</string>
+    <string name="skills">I am eager to apply my skills and knowledge to create innovative and user-friendly mobile applications. With a solid foundation in programming and a passion for technology, I am confident in my ability to create high-quality apps that meet the needs of users.</string>
+    <string name="queries">For any queries, contact me through the following links :</string>
+    <string name="dev_name">Shreyansh Jain</string>
+    <string name="gmaillink">mailto:shreyanshatwork@gmail.com</string>
+    <string name="linkedinlink">https://linkedin.com/in/shreyxnsh</string>
+    <string name="githublink">https://github.com/shreyxnsh</string>
+
 
 </resources>

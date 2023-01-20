@@ -9,22 +9,24 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="#13497b"
         android:padding="15dp"
         app:cardCornerRadius="15dp"
-        android:backgroundTint="#13497b"
-        android:layout_margin="15dp"
         app:cardElevation="15dp">
 
         <RelativeLayout
+            android:id="@+id/name"
             android:layout_width="match_parent"
-            android:padding="10dp"
             android:layout_height="wrap_content"
-            android:id="@+id/name">
+            android:padding="10dp">
+
             <LinearLayout
                 android:id="@+id/info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/facultyImage"
@@ -33,31 +35,67 @@
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/facultydemo" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="25dp"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/poppinsemibold"
-                    android:text="Shreyansh Jain"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/devName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinsemibold"
+                        android:text="@string/dev_name"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
 
+                    <TextView
+                        android:id="@+id/devInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinsemibold"
+                        android:text="20 | Pune, India."
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/description"
-
-                android:layout_below="@id/info"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/info"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/introText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Hey! I'm an Android Developer and an undergrad"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/intro"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/skillsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/skills"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/queriesText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/queries"
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>
@@ -66,76 +104,40 @@
                 android:id="@+id/buttonsGL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
                 android:layout_below="@id/description"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/mailBtn"
-                    android:layout_width="140dp"
-                    android:layout_height="45dp"
-                    android:layout_below="@id/description"
+                <ImageView
+                    android:id="@+id/gmail"
                     android:layout_weight="1"
-                    android:layout_centerInParent="true"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/button_gradient"
-                    android:drawableStart="@drawable/pdf_white"
-                    android:fontFamily="@font/poppinsemibold"
-                    android:padding="10dp"
-                    android:text="Gmail"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_gmail_svgrepo_com" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/linkedinBtn"
-                    android:layout_width="140dp"
-                    android:layout_height="45dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/linkedin"
+                    android:layout_width="50dp"
                     android:layout_weight="1"
-                    android:layout_below="@id/description"
-                    android:layout_centerInParent="true"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/button_gradient"
-                    android:drawableStart="@drawable/pdf_white"
-                    android:fontFamily="@font/poppinsemibold"
-                    android:padding="10dp"
-                    android:text="LinkedIn"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_linkedin" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/github"
+                    android:layout_width="50dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_githublogo" />
+
+
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonsM"
-                android:weightSum="1"
-                android:orientation="vertical"
-                android:layout_below="@id/buttonsGL">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/githubBtn"
-                    android:layout_width="140dp"
-                    android:layout_height="45dp"
-                    android:layout_weight="0.1"
-                    android:layout_below="@id/description"
-                    android:layout_gravity="center"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/button_gradient"
-                    android:drawableStart="@drawable/pdf_white"
-                    android:fontFamily="@font/poppinsemibold"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:text="GitHub"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-
-
-
 
 
         </RelativeLayout>
-
 
 
     </com.google.android.material.card.MaterialCardView>
