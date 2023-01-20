@@ -28,6 +28,26 @@ Welcome to VTOP, the official college application for Vellore Institute of Techn
  - [Lottie](https://github.com/airbnb/lottie-android)
  - [Meow Bottom Navigation](https://github.com/oneHamidreza/MeowBottomNavigation)
  
+ ## General Queries
+
+### 🔒 Found bugs? 
+
+We're glad that you've tried exploring the application with a technical approach. The application is currently in a testing phase, if you found bugs, raise an issue. Furthermore, if you can solve the issue and contribute in this project raise a pull-request!
+
+
+### 🥱 What makes it different from the official VTOP website?
+
+With the help of this app, users will be able to access information without any hassle! The official website has got various barriers for an user hence it is not user-friendly. But, VTOP-app is user-friendly! You often have to login the portal to gather information regarding faculties, students tend to miss opportunities which are sitting idle in their maibox. Eliminating such issues is the major motive.
+
+Note: This is an open-source project, drop in a mail or a PR to contribute in this repository.
+
+
+### 🎯What it can do?
+
+- Users can access necessary information in 2-3 clicks!
+- Displays all the notices which are sent to you via e-mail directly in the application.
+- Quickly view pdfs and calculate your GPA.
+- Reach out to faculties without any hassle.
 
 ## Clone this project :
 
@@ -37,27 +57,6 @@ Clone this project using CLI
   git clone https://github.com/shreyxnsh/VTOP.git
 ```
 
-## General Queries
-
-### 🔒Is it safe?
-
-It is just as secure as the official VTOP of VIT Bhopal. This app is internally making requests to VTOP on the user's behalf and then displays the response it receives. Additionally, it is open source, meaning the full source code is accessible online to anyone (see about section in the app).
-
-To do that it uses WebView which allows apps to display content from the web directly inside an application just like a browser.
-
-### 🥱How is this app any better than the Official VTOP Website / Client?
-
-With the help of this app, users will be able to complete particular activities quickly and easily. This is what the app aims to achieve because in today's society we expect everything we use on a regular basis to be mobile-friendly and user-friendly. Behind the UI wall, this app hides a variety of issues and errors that are encountered in the VTOP.
-
-Note: It only ports a few elements of Official VTOP, hence the moniker "mini VTOP," and it was not designed to, and will never be able to, replace Official VTOP.
-
-### 🎯What it can do?
-
-- User can login with one tap after the initial login.
-- Shows the schedule in an intuitive way, for instance, it displays the current class as well as the classes that will be held on a particular day.
-- Quickly displays attendance and CGPA.
-- Offline mode for records that have previously been viewed. Useful if VTOP or the internet is down.
-- Several additional features, such as the VIT calendar, full academic records, test schedule viewers, etc., will soon be introduced.
 
 # MIT License
 
