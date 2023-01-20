@@ -3,7 +3,7 @@
 Welcome to VTOP, the official college application for Vellore Institute of Technology, Bhopal. This app is designed to make your college experience more convenient and efficient. With VTOP, you have access to a wealth of information and resources, including a faculty database, notices section, event section, e-book section, and a convenient CGPA calculator. The app also boasts an intuitive and user-friendly interface, making it easy to navigate and access the features you need. Whether you're a current student, prospective student, or simply someone interested in the college, VTOP is the perfect tool to stay connected and informed.
 ## Features
 
-- Faculty Database : Now, you can search amongst faculties and get thier data within seconds. 
+- :man_teacher: Faculty Database : Now, you can search amongst faculties and get thier data within seconds. 
 - Notices Section : No need to open Gmail! Get all the notices on your fingertips. 
 - E-books : Stuck in finding pdf? No worries, we've got you covered. Access all the learning material on VTOp
 - CGPA Calculator : Got your marks, but where do you stand? Know your GPA / CGPA by entering your marks and course credits.
