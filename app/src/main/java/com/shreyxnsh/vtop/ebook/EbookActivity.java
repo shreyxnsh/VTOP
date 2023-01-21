@@ -67,7 +67,7 @@ public class EbookActivity extends AppCompatActivity {
                 list = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     EbookData data = snapshot.getValue(EbookData.class);
-                    list.add(data);
+                    list.add(0,data);
                 }
                 adapter = new EbookAdapter(EbookActivity.this, list);
                 adapter.notifyDataSetChanged();
@@ -127,7 +127,4 @@ public class EbookActivity extends AppCompatActivity {
         shimmerFrameLayout.startShimmer();
         super.onRestart();
     }
-
-
-
 }

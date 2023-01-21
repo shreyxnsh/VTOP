@@ -55,5 +55,6 @@
         android:background="@color/white"
         app:headerLayout="@layout/drawer_header"
         app:itemTextAppearance="@style/poppins_bold"
+        app:itemTextColor="@color/textColor"
         android:layout_gravity="start"/>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -244,7 +244,7 @@ public class FacultyFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle("Faculty Info");
+        ((MainActivity) getActivity()).setActionBarTitle("Faculty");
     }
 
 
