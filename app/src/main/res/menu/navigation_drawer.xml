@@ -10,23 +10,24 @@
             <group android:checkableBehavior="single">
                 <item android:id="@+id/navigation_ebookpdf"
                     android:icon="@drawable/pdf"
-                    
                     android:title="E-books"/>
 
                 <item android:id="@+id/navigation_cgpa"
                     android:icon="@drawable/cgpa_icon"
-                    android:title="CGPA Calculator"/>
+                    android:title="GPA Calculator (On the way)"/>
 
                 <item android:id="@+id/navigation_video"
                     android:icon="@drawable/video_icon"
                     android:title="Video Lectures"/>
+
+                <item android:id="@+id/navigation_theme"
+                    android:icon="@drawable/theme_icon"
+                    android:title="Themes"/>
             </group>
         </menu>
     </item>
 
-    <item android:id="@+id/navigation_theme"
-        android:icon="@drawable/theme_icon"
-        android:title="Themes"/>
+
 
     <item android:title="Spread the initiative!">
         <menu>

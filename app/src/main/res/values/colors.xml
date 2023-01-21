@@ -6,8 +6,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="textColor">#3f3b3b</color>
-    <color name="titleColor">#1b272c</color>
+    <color name="iconColor">#000000</color>
+    <color name="textColor">#000000</color>
     <color name="grey">#828080</color>
     <color name="grey1">#4f4f4f</color>
     <color name="grey2">#d6d6d6</color>

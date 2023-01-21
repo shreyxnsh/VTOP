@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="fontFamily">@font/poppinsmedium </item>
+        <item name="fontFamily">@font/poppinsmedium</item>
 
     </style>
 
