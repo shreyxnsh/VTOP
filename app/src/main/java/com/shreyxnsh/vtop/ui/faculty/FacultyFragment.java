@@ -31,10 +31,9 @@ import java.util.List;
 
 public class FacultyFragment extends Fragment {
 
-    private RecyclerView cs, mech, eee, asl;
-    private LinearLayout csNoData, mechNoData, eeeNoData, aslNoData;
-    private List<FacultyData> cseList, mecList, eeeList, aslList;
-    private List<FacultyData> list;
+    private RecyclerView facultyRV;
+    private LinearLayout nodata;
+    private List<FacultyData> facultyList;
     private FacultyAdapter adapter;
     private EditText faculty_search;
     private LottieAnimationView progressBar;
@@ -48,15 +47,9 @@ public class FacultyFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_faculty, container, false);
 
 
-        cs = view.findViewById(R.id.csDepartment);
-        mech = view.findViewById(R.id.mechDepartment);
-        eee = view.findViewById(R.id.eeeDepartment);
-        asl = view.findViewById(R.id.aslDepartment);
+        facultyRV = view.findViewById(R.id.facultyListRV);
 
-        csNoData = view.findViewById(R.id.csNoData);
-        mechNoData = view.findViewById(R.id.mechNoData);
-        aslNoData = view.findViewById(R.id.aslNoData);
-        eeeNoData = view.findViewById(R.id.eeeNoData);
+        nodata = view.findViewById(R.id.NoData);
 
         progressBar = view.findViewById(R.id.progressBar);
 
@@ -80,22 +73,22 @@ public class FacultyFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 //                list = new ArrayList<>();
-                cseList = new ArrayList<>();
+                facultyList = new ArrayList<>();
                 if(!snapshot.exists()){
-                    csNoData.setVisibility(View.VISIBLE);
-                    cs.setVisibility(View.GONE);
+                    nodata.setVisibility(View.VISIBLE);
+                    facultyRV.setVisibility(View.GONE);
                 }else{
-                    csNoData.setVisibility(View.GONE);
-                    cs.setVisibility(View.VISIBLE);
+                    nodata.setVisibility(View.GONE);
+                    facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        cseList.add(0,data);
+                        facultyList.add(0,data);
 //                        list.addAll(cseList);
                     }
-                    cs.setHasFixedSize(true);
-                    cs.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(cseList, getContext());
-                    cs.setAdapter(adapter);
+                    facultyRV.setHasFixedSize(true);
+                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new FacultyAdapter(facultyList, getContext());
+                    facultyRV.setAdapter(adapter);
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -112,24 +105,22 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                list = new ArrayList<>();
-                mecList = new ArrayList<>();
                 if(!snapshot.exists()){
-                    mechNoData.setVisibility(View.VISIBLE);
-                    mech.setVisibility(View.GONE);
+                    nodata.setVisibility(View.VISIBLE);
+                    facultyRV.setVisibility(View.GONE);
                 }else{
-                    mechNoData.setVisibility(View.GONE);
-                    mech.setVisibility(View.VISIBLE);
+                    nodata.setVisibility(View.GONE);
+                    facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        mecList.add(0,data);
+                        facultyList.add(0,data);
 //                        list.addAll(mecList);
 
                     }
-                    mech.setHasFixedSize(true);
-                    mech.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(mecList, getContext());
-                    mech.setAdapter(adapter);
+                    facultyRV.setHasFixedSize(true);
+                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new FacultyAdapter(facultyList, getContext());
+                    facultyRV.setAdapter(adapter);
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -146,25 +137,23 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                list = new ArrayList<>();
-                eeeList = new ArrayList<>();
                 if(!snapshot.exists()){
-                    eeeNoData.setVisibility(View.VISIBLE);
-                    eee.setVisibility(View.GONE);
+                    nodata.setVisibility(View.VISIBLE);
+                    facultyRV.setVisibility(View.GONE);
                 }else{
-                    eeeNoData.setVisibility(View.GONE);
-                    eee.setVisibility(View.VISIBLE);
+                    nodata.setVisibility(View.GONE);
+                    facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        eeeList.add(0,data);
+                        facultyList.add(0,data);
 //                        list.addAll(eeeList);
                         progressBar.setVisibility(View.GONE);
 
                     }
-                    eee.setHasFixedSize(true);
-                    eee.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(eeeList, getContext());
-                    eee.setAdapter(adapter);
+                    facultyRV.setHasFixedSize(true);
+                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new FacultyAdapter(facultyList, getContext());
+                    facultyRV.setAdapter(adapter);
                 }
             }
 
@@ -180,24 +169,22 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                list = new ArrayList<>();
-                aslList = new ArrayList<>();
                 if(!snapshot.exists()){
-                    aslNoData.setVisibility(View.VISIBLE);
-                    asl.setVisibility(View.GONE);
+                    nodata.setVisibility(View.VISIBLE);
+                    facultyRV.setVisibility(View.GONE);
                 }else{
-                    aslNoData.setVisibility(View.GONE);
-                    asl.setVisibility(View.VISIBLE);
+                    nodata.setVisibility(View.GONE);
+                    facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        aslList.add(0,data);
+                        facultyList.add(0,data);
 //                        list.addAll(aslList);
 
                     }
-                    asl.setHasFixedSize(true);
-                    asl.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(aslList, getContext());
-                    asl.setAdapter(adapter);
+                    facultyRV.setHasFixedSize(true);
+                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new FacultyAdapter(facultyList, getContext());
+                    facultyRV.setAdapter(adapter);
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -228,11 +215,11 @@ public class FacultyFragment extends Fragment {
     }
     private void filter(String text){
         ArrayList<FacultyData> filterList = new ArrayList<>();
-        for (FacultyData item : list){
+        for (FacultyData item : facultyList){
             if (item.getName().toLowerCase().contains(text.toLowerCase())){
                 filterList.add(item);
             }
-            
+
         }
         if (filterList.isEmpty()){
             Toast.makeText(getContext(), "No data Found", Toast.LENGTH_SHORT).show();
@@ -244,7 +231,7 @@ public class FacultyFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle("Faculty");
+        ((MainActivity) getActivity()).setActionBarTitle("Faculty Info");
     }
 
 
