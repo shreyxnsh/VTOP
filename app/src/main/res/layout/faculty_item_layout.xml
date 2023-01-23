@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="5dp"
         android:padding="3dp">
 
         <LinearLayout
@@ -26,10 +26,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="1dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:paddingLeft="12dp">
+                android:paddingLeft="10dp">
 
                 <TextView
                     android:id="@+id/facultyName"
@@ -44,18 +44,19 @@
                     android:id="@+id/facultyDesignation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
                     android:text="Associate Professor"
+                    android:padding="2dp"
                     android:fontFamily="@font/prodsansitalic"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size0" />
 
                 <TextView
-                    android:padding="2dp"
                     android:id="@+id/facultyEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
                     android:text="virendra.kushwah@vitbhopal.ac.in"
                     android:fontFamily="@font/prodsansregular"
                     android:textColor="@color/white"
@@ -66,7 +67,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="A-309"
-                    android:padding="2dp"
                     android:fontFamily="@font/prodsansregular"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size1" />

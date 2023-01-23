@@ -145,7 +145,7 @@ public class FacultyFragment extends Fragment {
                     facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0,data);
+                        facultyList.add(data);
 //                        list.addAll(eeeList);
                         progressBar.setVisibility(View.GONE);
 
