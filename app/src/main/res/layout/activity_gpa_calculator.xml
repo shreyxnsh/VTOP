@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.gpacalc.GpaCalculator">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="#13497b"
+        android:padding="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp">
+        <RelativeLayout
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ad_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub_no"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:backgroundTint="#F5F5F8"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center_horizontal"
+                android:onClick="addition"
+                android:text="Add Subject"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#050000"
+                android:textStyle="bold"
+                app:cornerRadius="15dp" />
+
+            <GridLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ad_sub"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:columnCount="3" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center_horizontal"
+                android:hint="Enter the number of courses"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</ScrollView>

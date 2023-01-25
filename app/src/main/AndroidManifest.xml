@@ -16,9 +16,12 @@
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
-            android:name=".ui.developers.Developers"
-            android:parentActivityName=".MainActivity"
+            android:name=".ui.gpacalc.GpaCalculator"
             android:exported="false" />
+        <activity
+            android:name=".ui.developers.Developers"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".onboarding.OnBoardingScreen"
             android:exported="false"
@@ -39,13 +42,13 @@
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ebook.PdfViewerActivity"
-            android:parentActivityName=".ebook.EbookActivity"
             android:exported="false"
+            android:parentActivityName=".ebook.EbookActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ebook.EbookActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

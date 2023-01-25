@@ -31,6 +31,7 @@ import com.shreyxnsh.vtop.ui.aboutus.AboutUsFragment;
 import com.shreyxnsh.vtop.ui.developers.Developers;
 import com.shreyxnsh.vtop.ui.faculty.FacultyFragment;
 import com.shreyxnsh.vtop.ui.gallery.GalleryFragment;
+import com.shreyxnsh.vtop.ui.gpacalc.GpaCalculator;
 import com.shreyxnsh.vtop.ui.home.HomeFragment;
 import com.shreyxnsh.vtop.ui.notice.NoticeFragment;
 
@@ -196,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Themes", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.navigation_cgpa:
-                Toast.makeText(this, "Hang on! We are still coding...", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, GpaCalculator.class));
                 break;
             case R.id.navigation_websites:
                 uri = Uri.parse(getString(R.string.vtop_website_link));
