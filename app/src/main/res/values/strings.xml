@@ -48,4 +48,12 @@
         <item>Dark</item>
     </string-array>
 
+    <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:textViewStyle">@style/CustomAlertDialogTextView</item>
+    </style>
+
+    <style name="CustomAlertDialogTextView" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/poppinsmedium</item>
+    </style>
+
 </resources>

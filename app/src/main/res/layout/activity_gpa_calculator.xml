@@ -38,7 +38,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:gravity="center_horizontal"
                 android:onClick="addition"
-                android:text="Add Subject"
+                android:text="Add Courses"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#050000"

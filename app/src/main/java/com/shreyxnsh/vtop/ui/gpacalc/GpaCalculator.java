@@ -3,20 +3,29 @@ package com.shreyxnsh.vtop.ui.gpacalc;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.transition.Slide;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.datepicker.MaterialTextInputPicker;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.transition.SlideDistanceProvider;
 import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
@@ -34,8 +43,12 @@ public class GpaCalculator extends AppCompatActivity {
     @SuppressLint({"WrongConstant", "ResourceType"})
     public void addition(View view) {
         GridLayout gridLayout = (GridLayout) findViewById(R.id.linearlayout);
+        GridView.LayoutParams layoutParams = new GridView.LayoutParams(
+                GridView.LayoutParams.WRAP_CONTENT,
+                GridView.LayoutParams.WRAP_CONTENT);
+
         EditText editText = (EditText) findViewById(R.id.sub_no);
-        /*EditText editText2 = (EditText) findViewById(R.id.total_marks);*/
+
         String obj = editText.getText().toString();
         if (obj.equals("")) {
             editText.setError("Please Enter Required Field");
@@ -44,34 +57,39 @@ public class GpaCalculator extends AppCompatActivity {
         }
         gridLayout.removeAllViews();
         int parseInt = Integer.parseInt(obj);
-        if (parseInt > 25) {
-            editText.setError("Subject limit is 25");
+        if (parseInt > 10) {
+            editText.setError("Subject limit is 10");
             editText.setText("");
             editText.requestFocus();
             return;
         }
         editText.setEnabled(false);
-       /* editText2.setEnabled(false);
-        if (editText2.getText().toString().equals("")) {
-            editText2.setHint("--");
-        }*/
+
         int i = parseInt + 1;
         int i2 = parseInt;
         for (int i3 = 0; i3 < parseInt; i3++) {
+
+            // Courses
             TextView textView = new TextView(this);
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/poppinsmedium.ttf");
             textView.setTextAlignment(4);
-            textView.setTextColor(R.color.white);
+            textView.setTextColor(-1);
             textView.setTextSize(18.0f);
-            textView.setText("Course" + i2 + " ");
+            textView.setTypeface(typeface);
+            textView.setText("Course " + i2);
             i2--;
             gridLayout.addView(textView, 0);
-            EditText editText3 = new EditText(this);
-            editText3.setInputType(2);
-            editText3.setTextColor(R.color.white);
-            editText3.setId(i3);
-            editText3.setTextAlignment(4);
-            editText3.setHint(" Sub-Credit ");
-            gridLayout.addView(editText3, 1);
+
+            // Credits
+            EditText text = new EditText(this);
+            text.setInputType(2);
+            text.setTextColor(-1);
+            text.setId(i3);
+            text.setTextAlignment(4);
+            text.setTypeface(typeface);
+            text.setHint(" Credit ");
+            text.setHintTextColor(-1);
+            gridLayout.addView(text, 1);
             Spinner spinner = new Spinner(this);
             spinner.setId(i);
             i++;
@@ -91,9 +109,16 @@ public class GpaCalculator extends AppCompatActivity {
             gridLayout.addView(spinner, 2);
 
         }
-        Button button = new Button(this);
+        MaterialButton button = new MaterialButton(this);
         button.setTextAlignment(4);
         button.setTextColor(-16777216);
+        button.setCornerRadius(15);
+        button.setBackgroundColor(-1);
+        button.setLayoutParams(layoutParams);
+        button.setGravity(Gravity.CENTER);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            button.setTextAppearance(R.style.poppins_bold);
+        }
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 GpaCalculator.this.show(parseInt);
@@ -149,13 +174,11 @@ public class GpaCalculator extends AppCompatActivity {
 
         float gpa = ((float)obtainedCreditPoints)/totalCreditPoints;
 
-
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Success");
-        builder.setMessage( "Your GPA Is : "+Math.round(gpa*100.0)/100.0);
-        builder.setNegativeButton((CharSequence) "OK", (DialogInterface.OnClickListener) null).setCancelable(false);
+        builder.setTitle("Calculated!");
+        builder.setIcon(R.drawable.ic_baseline_check_circle_outline_24);
+        builder.setMessage( "Your GPA is : "+Math.round(gpa*100.0)/100.0);
+        builder.setNegativeButton((CharSequence) "Okay", (DialogInterface.OnClickListener) null).setCancelable(false);
         builder.create();
         builder.show();
 

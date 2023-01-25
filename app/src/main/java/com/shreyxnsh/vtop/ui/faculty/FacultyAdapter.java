@@ -1,15 +1,19 @@
 package com.shreyxnsh.vtop.ui.faculty;
 
+import static com.shreyxnsh.vtop.R.anim.rv_anim;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.shreyxnsh.vtop.R;
 import com.squareup.picasso.Picasso;
 
@@ -18,6 +22,7 @@ import java.util.List;
 public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyViewAdapter> {
     private List<FacultyData> list;
     private Context context;
+
 
     public FacultyAdapter(List<FacultyData> list, Context context) {
         this.list = list;
@@ -54,6 +59,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         } catch (Exception e) {
             e.printStackTrace();
         }
+        holder.facultyCard.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), rv_anim));
 
     }
 
@@ -61,6 +67,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
 
         private TextView name, email, designation, cabin;
         private ImageView image;
+        private MaterialCardView facultyCard;
 
 
         public FacultyViewAdapter(@NonNull View itemView) {
@@ -70,6 +77,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
             designation = itemView.findViewById(R.id.facultyDesignation);
             image = itemView.findViewById(R.id.facultyImage);
             cabin = itemView.findViewById(R.id.facultyCabin);
+            facultyCard = itemView.findViewById(R.id.facultyCard);
         }
     }
 }
