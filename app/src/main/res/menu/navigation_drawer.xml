@@ -14,7 +14,7 @@
 
                 <item android:id="@+id/navigation_cgpa"
                     android:icon="@drawable/cgpa_icon"
-                    android:title="GPA Calculator (On the way)"/>
+                    android:title="GPA Calculator"/>
 
                 <item android:id="@+id/navigation_video"
                     android:icon="@drawable/video_icon"

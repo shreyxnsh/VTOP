@@ -17,6 +17,7 @@
         tools:targetApi="31">
         <activity
             android:name=".ui.gpacalc.GpaCalculator"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.developers.Developers"
