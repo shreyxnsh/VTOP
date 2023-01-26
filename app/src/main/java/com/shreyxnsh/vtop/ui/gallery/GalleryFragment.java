@@ -25,7 +25,7 @@ import java.util.List;
 
 public class GalleryFragment extends Fragment {
 
-  RecyclerView convoRV, advityaRV, vicharRV, aicubRV;
+  RecyclerView convoRV, advityaRV, vicharRV, aadhavRV;
   GalleryAdapter adapter;
   DatabaseReference reference;
 
@@ -39,43 +39,19 @@ public class GalleryFragment extends Fragment {
         convoRV = view.findViewById(R.id.convoRV);
         advityaRV = view.findViewById(R.id.advityaRV);
         vicharRV = view.findViewById(R.id.vicharRV);
-        aicubRV = view.findViewById(R.id.aiclubRV);
+        aadhavRV = view.findViewById(R.id.aadhavRV);
 
         reference = FirebaseDatabase.getInstance().getReference().child("gallery");
 
+        getAadhavImage();
         getConvoImage();
         getAdvityaImage();
-        getVicharImage();
-//        getAiConclaveImage();
+        getVivaanImage();
 
         return view;
     }
-//
-//    private void getAiConclaveImage() {
-//        reference.child("AI Conclave 2.0").addValueEventListener(new ValueEventListener() {
-//
-//            List<String> imageList = new ArrayList<>();
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-//                    String data = (String) snapshot.getValue();
-//                    imageList.add(data);
-//                }
-//                adapter = new GalleryAdapter(getContext(),imageList);
-//                //setting layout manager in recyclerView
-//                aicubRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
-//                aicubRV.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
-
-    private void getVicharImage() {
-        reference.child("Vichaar'22").addValueEventListener(new ValueEventListener() {
+    private void getAadhavImage() {
+        reference.child("Aadhav ").addValueEventListener(new ValueEventListener() {
 
             List<String> imageList = new ArrayList<>();
             @Override
@@ -86,7 +62,31 @@ public class GalleryFragment extends Fragment {
                 }
                 adapter = new GalleryAdapter(getContext(),imageList);
                 //setting layout manager in recyclerView
-                vicharRV.setLayoutManager(new GridLayoutManager(getContext(), 3));
+                aadhavRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                aadhavRV.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void getVivaanImage() {
+        reference.child("Vivaan").addValueEventListener(new ValueEventListener() {
+
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                //setting layout manager in recyclerView
+                vicharRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
                 vicharRV.setAdapter(adapter);
             }
 
@@ -110,7 +110,7 @@ public class GalleryFragment extends Fragment {
                 }
                 adapter = new GalleryAdapter(getContext(),imageList);
                 //setting layout manager in recyclerView
-                advityaRV.setLayoutManager(new GridLayoutManager(getContext(), 3));
+                advityaRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
                 advityaRV.setAdapter(adapter);
             }
 
@@ -134,7 +134,7 @@ public class GalleryFragment extends Fragment {
                 }
                 adapter = new GalleryAdapter(getContext(),imageList);
                 //setting layout manager in recyclerView
-                convoRV.setLayoutManager(new GridLayoutManager(getContext(), 3));
+                convoRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
                 convoRV.setAdapter(adapter);
             }
 

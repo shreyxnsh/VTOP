@@ -50,7 +50,6 @@ public class GpaCalculator extends AppCompatActivity {
         actionBar.setIcon(R.drawable.ic_baseline_calculate_24);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressLint({"WrongConstant", "ResourceType"})
@@ -120,7 +119,6 @@ public class GpaCalculator extends AppCompatActivity {
             arrayAdapter.setDropDownViewResource(17367049);
             spinner.setAdapter(arrayAdapter);
             gridLayout.addView(spinner, 2);
-
         }
         MaterialButton button = new MaterialButton(this);
         button.setTextAlignment(4);
@@ -141,7 +139,6 @@ public class GpaCalculator extends AppCompatActivity {
         gridLayout.addView(button, parseInt * 3);
         Toast.makeText(this, "Subjects Added Successfully", 0).show();
     }
-
 
     private void show(int noOfSubjects) {
 
@@ -194,6 +191,5 @@ public class GpaCalculator extends AppCompatActivity {
         builder.setNegativeButton((CharSequence) "Okay", (DialogInterface.OnClickListener) null).setCancelable(false);
         builder.create();
         builder.show();
-
     }
 }

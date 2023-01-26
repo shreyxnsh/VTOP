@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/text_margin"
+        android:padding="12sp"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -19,7 +19,39 @@
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             app:cardCornerRadius="15dp"
-            android:layout_height="290dp">
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aadhav'22"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsemibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:id="@+id/aadhavRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            app:cardCornerRadius="15dp"
+            android:layout_height="wrap_content">
             
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,7 +65,7 @@
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:fontFamily="@font/poppinsemibold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_margin="2dp"
@@ -51,7 +83,7 @@
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
             app:cardCornerRadius="15dp"
-            android:layout_height="280dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +97,7 @@
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:fontFamily="@font/poppinsemibold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -82,7 +114,8 @@
             app:cardBackgroundColor="@color/dark_blue"
             app:cardElevation="15dp"
             app:cardMaxElevation="15dp"
-            android:layout_height="280dp">
+            app:cardCornerRadius="15dp"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,12 +124,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vichar'22"
+                    android:text="Vivaan"
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:fontFamily="@font/poppinsemibold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -107,36 +140,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/dark_blue"
-            app:cardElevation="15dp"
-            app:cardMaxElevation="15dp"
-            android:layout_height="280dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AI - Conclave 2.0"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size1"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsmedium"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:id="@+id/aiclubRV"/>
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
 
 
     </LinearLayout>
