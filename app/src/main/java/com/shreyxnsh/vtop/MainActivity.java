@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void animateNavigationView() {
         //Add any color or remove it to use the default one!
         //To make it transparent use Color.Transparent in side setScrimColor();
-        drawerLayout.setScrimColor(R.color.dark_blue);
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {

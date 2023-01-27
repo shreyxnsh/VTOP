@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
+    android:background="@color/backgroundCol"
     tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -52,8 +53,9 @@
         android:layout_height="match_parent"
         android:id="@+id/navigation_view"
         app:menu="@menu/navigation_drawer"
-        android:background="@color/white"
+        android:background="@color/backgroundCol"
         app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@color/light_blue"
         app:itemTextAppearance="@style/poppins_bold"
         app:itemTextColor="@color/textColor"
         android:layout_gravity="start"/>
