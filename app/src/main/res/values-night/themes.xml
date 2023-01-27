@@ -8,9 +8,19 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/colorPrimary</item>
         <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/txtcolor</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
+    <style name="poppins_bold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppinsemibold</item>
+    </style>
+
+    <style name="MenuGroupText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#fff</item>
+    </style>
+
 </resources>

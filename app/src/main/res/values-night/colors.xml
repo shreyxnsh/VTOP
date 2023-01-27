@@ -7,20 +7,18 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="iconColor">#000000</color>
-    <color name="textColor">#000000</color>
+    <color name="textColor">#FFF</color>
     <color name="grey">#828080</color>
     <color name="grey1">#4f4f4f</color>
     <color name="grey2">#d6d6d6</color>
     <color name="darkColor">#313131</color>
     <color name="txtcolor">#232426</color>
-    <color name="backgroundCol">#fff</color>
+    <color name="backgroundCol">#1F1F1F</color>
 
     <color name="bright_blue">#3f59fe</color>
     <color name="purple_blue">#6278FF</color>
     <color name="dark_blue">#13497b</color>
-    <color name="light_blue">#13497b</color>
+    <color name="light_blue">#D1E1FF</color>
     <color name="demo">#6c63fe</color>
-    <color name="groupTitle">#000</color>
-
-
+    <color name="groupTitle">#fff</color>
 </resources>
