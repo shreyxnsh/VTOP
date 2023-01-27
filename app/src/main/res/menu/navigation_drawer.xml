@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <item android:id="@+id/navigation_websites"
+    <item
+        android:id="@+id/navigation_websites"
         android:icon="@drawable/website_icon"
-        android:title="VTOP website"/>
+        android:layout_margin="15dp"
+        android:title="VTOP website"
+        tools:targetApi="o" />
 
-    <item  android:title="Utilities">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item android:id="@+id/navigation_ebookpdf"
-                    android:icon="@drawable/pdf"
-                    android:title="E-books"/>
+    <item
+        android:id="@+id/navigation_ebookpdf"
+        android:icon="@drawable/pdf"
+        android:title="E-books" />
 
-                <item android:id="@+id/navigation_cgpa"
-                    android:icon="@drawable/cgpa_icon"
-                    android:title="GPA Calculator"/>
+    <item
+        android:id="@+id/navigation_cgpa"
+        android:icon="@drawable/calc_blue"
+        android:title="GPA Calculator" />
 
-                <item android:id="@+id/navigation_video"
-                    android:icon="@drawable/video_icon"
-                    android:title="Video Lectures"/>
+    <item
+        android:id="@+id/navigation_video"
+        android:icon="@drawable/video_icon"
+        android:title="Video Lectures" />
 
-                <item android:id="@+id/navigation_theme"
-                    android:icon="@drawable/theme_icon"
-                    android:title="Themes"/>
-            </group>
-        </menu>
-    </item>
+    <item
+        android:id="@+id/navigation_theme"
+        android:icon="@drawable/theme_icon"
+        android:title="Themes" />
 
 
+    <item
+        android:id="@+id/navigation_shareus"
+        android:icon="@drawable/share_icon"
+        android:title="Share" />
 
-    <item android:title="Spread the initiative!">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item android:id="@+id/navigation_shareus"
-                    android:icon="@drawable/share_icon"
-                    android:title="Share"/>
+    <item
+        android:id="@+id/navigation_rate"
+        android:icon="@drawable/rate_icon"
+        android:title="Rate us" />
 
-                <item android:id="@+id/navigation_rate"
-                    android:icon="@drawable/rate_icon"
-                    android:title="Rate us"/>
-
-                <item android:id="@+id/navigation_developer"
-                    android:icon="@drawable/android_dev_icon"
-                    android:title="Developers"/>
-            </group>
-        </menu>
-    </item>
+    <item
+        android:id="@+id/navigation_developer"
+        android:icon="@drawable/android_dev_icon"
+        android:title="Developers" />
 
 
 </menu>

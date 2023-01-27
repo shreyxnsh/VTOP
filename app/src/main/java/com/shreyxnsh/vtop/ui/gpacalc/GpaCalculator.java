@@ -106,7 +106,7 @@ public class GpaCalculator extends AppCompatActivity {
             spinner.setId(i);
             i++;
             ArrayList arrayList = new ArrayList();
-            arrayList.add("Select Grade");
+            arrayList.add("Grade");
             arrayList.add("S");
             arrayList.add("A");
             arrayList.add("B");
@@ -144,7 +144,7 @@ public class GpaCalculator extends AppCompatActivity {
 
         //for referencing grade points
         Map<String, Integer> gradePoint = new HashMap<>();
-        gradePoint.put("Select Grade", -1);
+        gradePoint.put("Grade", -1);
         gradePoint.put("S", 10);
         gradePoint.put("A", 9);
         gradePoint.put("B", 8);
