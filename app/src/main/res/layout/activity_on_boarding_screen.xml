@@ -17,19 +17,6 @@
 
     </androidx.viewpager.widget.ViewPager>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/skipBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="skip"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="@color/black"
-        android:layout_width="100dp"
-        app:cornerRadius="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_height="50dp"
-        android:drawableEnd="@drawable/skip_icon"
-        android:text="@string/skipBtn" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
