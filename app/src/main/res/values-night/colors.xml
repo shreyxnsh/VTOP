@@ -19,6 +19,8 @@
     <color name="purple_blue">#6278FF</color>
     <color name="dark_blue">#13497b</color>
     <color name="light_blue">#D1E1FF</color>
+    <color name="appIconTint">#D1E1FF</color>
+    <color name="titleColor">#D1E1FF</color>
     <color name="demo">#6c63fe</color>
     <color name="groupTitle">#fff</color>
 </resources>

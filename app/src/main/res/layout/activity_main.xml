@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
+            android:layout_marginTop="60dp"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,13 +40,29 @@
             app:mbn_circleColor="@color/white"
             app:mbn_countBackgroundColor="#ff6f00"
             app:mbn_countTextColor="#ffffff"
-
-
             app:mbn_defaultIconColor="@color/white"
             app:mbn_rippleColor="#2f424242"
             app:mbn_selectedIconColor="#3c415e"
             app:mbn_shadowColor="#1f212121" />
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/backgroundCol"
+                app:titleTextColor="@color/titleColor"
+                app:navigationIcon="@drawable/baseline_hamburger_24"
+                style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -55,7 +72,7 @@
         app:menu="@menu/navigation_drawer"
         android:background="@color/backgroundCol"
         app:headerLayout="@layout/drawer_header"
-        app:itemIconTint="@color/light_blue"
+        app:itemIconTint="@color/appIconTint"
         app:itemTextAppearance="@style/poppins_bold"
         app:itemTextColor="@color/textColor"
         android:layout_gravity="start"/>

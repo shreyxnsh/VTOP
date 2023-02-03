@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class Developers extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("  Developers");
         actionBar.setIcon(R.drawable.developer_white);
+        actionBar.setBackgroundDrawable(new ColorDrawable(0xff00DDED));
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
