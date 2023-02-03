@@ -2,6 +2,7 @@ package com.shreyxnsh.vtop.ui.developers;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 
 import com.shreyxnsh.vtop.R;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Developers extends AppCompatActivity {
@@ -22,20 +25,19 @@ public class Developers extends AppCompatActivity {
     private CircleImageView linkedin;
     private CircleImageView github;
     private Intent intent;
+    private Toolbar toolbar;
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developers);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        toolbar = findViewById(R.id.appbarDEV);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("  Developers");
-        actionBar.setIcon(R.drawable.developer_white);
-        actionBar.setBackgroundDrawable(new ColorDrawable(0xff00DDED));
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("Developers");
+        toolbar.setTitleTextAppearance(this, R.style.poppins_bold);
 
         gmail = findViewById(R.id.gmail);
         linkedin = findViewById(R.id.linkedin);
