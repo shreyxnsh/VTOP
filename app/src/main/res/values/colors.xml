@@ -13,7 +13,9 @@
     <color name="grey2">#d6d6d6</color>
     <color name="darkColor">#313131</color>
     <color name="txtcolor">#232426</color>
-    <color name="backgroundCol">#fff</color>
+    <color name="backgroundCol">#F4F5FA</color>
+    <color name="primaryGrey">#404B55</color>
+
 
     <color name="bright_blue">#3f59fe</color>
     <color name="purple_blue">#6278FF</color>

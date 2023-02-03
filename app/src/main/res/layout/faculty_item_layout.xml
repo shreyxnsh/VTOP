@@ -4,9 +4,9 @@
     android:padding="10dp"
     android:layout_width="match_parent"
     app:cardCornerRadius="15dp"
-    android:backgroundTint="#13497b"
+    android:backgroundTint="#404B55"
     android:id="@+id/facultyCard"
-    android:layout_height="170dp"
+    android:layout_height="wrap_content"
     android:layout_margin="15dp"
     app:cardElevation="15dp">
 
@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -38,8 +38,8 @@
                     android:layout_height="wrap_content"
                     android:text="Dr.Virendra Singh Kushwah"
                     android:textColor="@color/white"
-                    android:textSize="19sp"
-                    android:fontFamily="@font/prodsansbold" />
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppinsbold" />
 
                 <TextView
                     android:id="@+id/facultyDesignation"
@@ -48,9 +48,9 @@
                     android:layout_marginTop="5dp"
                     android:text="Associate Professor"
                     android:padding="2dp"
-                    android:fontFamily="@font/prodsansitalic"
+                    android:fontFamily="@font/poppinsmedium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size0" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/facultyEmail"
@@ -59,18 +59,18 @@
                     android:maxLines="2"
                     android:ellipsize="end"
                     android:text="virendra.kushwah@vitbhopal.ac.in"
-                    android:fontFamily="@font/prodsansregular"
+                    android:fontFamily="@font/poppinsmedium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size0" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/facultyCabin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="A-309"
-                    android:fontFamily="@font/prodsansregular"
+                    android:fontFamily="@font/poppinsemibold"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size1" />
+                    android:textSize="14sp" />
 
 
             </LinearLayout>

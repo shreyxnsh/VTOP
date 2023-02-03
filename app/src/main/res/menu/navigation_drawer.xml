@@ -3,17 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <item
-        android:id="@+id/navigation_websites"
-        android:icon="@drawable/website_icon"
-        android:layout_margin="15dp"
-        android:title="VTOP website"
-        tools:targetApi="o" />
-
-    <item
-        android:id="@+id/navigation_ebookpdf"
-        android:icon="@drawable/pdf"
-        android:title="E-books" />
+        <item
+            android:id="@+id/navigation_websites"
+            android:icon="@drawable/website_icon"
+            android:layout_margin="15dp"
+            android:title="VTOP website"
+            tools:targetApi="o" />
+        <item
+            android:id="@+id/navigation_ebookpdf"
+            android:icon="@drawable/pdf"
+            android:title="E-books" />
 
     <item
         android:id="@+id/navigation_cgpa"

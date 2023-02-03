@@ -40,7 +40,7 @@ import java.util.Objects;
 public class GpaCalculator extends AppCompatActivity {
     private Toolbar toolbar;
 
-    @SuppressLint({"RestrictedApi", "MissingInflatedId"})
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +86,7 @@ public class GpaCalculator extends AppCompatActivity {
 
             // Courses
             TextView textView = new TextView(this);
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/poppinsmedium.ttf");
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/poppinsemibold.ttf");
             textView.setTextAlignment(4);
             textView.setTextColor(-1);
             textView.setTextSize(18.0f);
@@ -118,8 +118,8 @@ public class GpaCalculator extends AppCompatActivity {
             arrayList.add("E");
             arrayList.add("F");
             arrayList.add("N");
-            ArrayAdapter arrayAdapter = new ArrayAdapter(this, 17367048, arrayList);
-            arrayAdapter.setDropDownViewResource(17367049);
+            ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.spinner_list, arrayList);
+            arrayAdapter.setDropDownViewResource(R.layout.spinner_list);
             spinner.setAdapter(arrayAdapter);
             gridLayout.addView(spinner, 2);
         }

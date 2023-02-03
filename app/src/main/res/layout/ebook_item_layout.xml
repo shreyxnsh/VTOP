@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/dark_blue"
+    app:cardBackgroundColor="@color/primaryGrey"
     app:cardElevation="8dp"
     app:cardCornerRadius="12dp"
     android:layout_margin="15dp"

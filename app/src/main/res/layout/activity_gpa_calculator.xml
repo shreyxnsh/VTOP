@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:backgroundTint="#13497b"
+        android:backgroundTint="#404B55"
         android:layout_below="@id/toolbarCL"
         android:padding="15dp"
         app:cardCornerRadius="15dp"
@@ -78,6 +78,7 @@
                 android:layout_below="@+id/ad_sub"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:useDefaultMargins="true"
                 android:columnCount="3" />
 
 
