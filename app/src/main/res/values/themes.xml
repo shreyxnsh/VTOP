@@ -11,6 +11,7 @@
         <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/appIconTint</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
