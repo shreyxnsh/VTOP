@@ -2,7 +2,9 @@ package com.shreyxnsh.vtop.ebook;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -27,6 +30,7 @@ import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EbookActivity extends AppCompatActivity {
 
@@ -38,18 +42,24 @@ public class EbookActivity extends AppCompatActivity {
     ShimmerFrameLayout shimmerFrameLayout;
     private LinearLayout shimmerLinearLayout;
     private EditText pdf_search;
+    private Toolbar toolbar;
+
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("  E-books");
-        actionBar.setIcon(R.drawable.pdf_white);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+
+        toolbar = findViewById(R.id.appbarEB);
+
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("E-books");
+        toolbar.setTitleTextAppearance(this, R.style.poppins_bold);
+
+
+
 
         ebookRV = findViewById(R.id.ebookRV);
         reference = FirebaseDatabase.getInstance().getReference().child("pdf");

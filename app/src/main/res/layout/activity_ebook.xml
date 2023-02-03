@@ -4,16 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/backgroundCol"
+    android:id="@+id/ebookRL"
     android:layout_height="match_parent"
     tools:context=".ebook.EbookActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appbarEB"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/backgroundCol"
+                app:title="E-Books"
+                app:titleTextColor="@color/titleColor"
+                style="@style/ToolbarColoredBackArrow"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <EditText
+        android:layout_below="@id/toolbarCL"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:id="@+id/pdf_search"
         android:hint="Search here"
-        android:textColorHint="@color/textColor"
+        android:textColorHint="@color/black"
         android:fontFamily="@font/prodsansbold"
+        android:inputType="text"
         android:drawableLeft="@drawable/search_icon"
         android:layout_marginTop="10dp"
         android:padding="8dp"
@@ -30,6 +57,7 @@
         android:layout_below="@id/pdf_search" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_below="@id/pdf_search"
         android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
