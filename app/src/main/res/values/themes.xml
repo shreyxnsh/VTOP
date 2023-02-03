@@ -3,7 +3,7 @@
     <style name="Theme.VTOP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/backgroundCol</item>
+        <item name="colorPrimaryVariant">@color/primaryGrey</item>
         <item name="colorOnPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <!-- Secondary brand color. -->
@@ -20,8 +20,12 @@
 
     </style>
 
-    <style name="poppins_bold" parent="android:Widget.TextView">
+    <style name="poppins_semibold" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/poppinsemibold</item>
+    </style>
+
+    <style name="poppins_bold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppinsbold</item>
     </style>
 
     <style name="ToolbarColoredBackArrow" parent="Theme.VTOP">

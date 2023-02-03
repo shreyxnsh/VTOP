@@ -17,8 +17,12 @@
         <!-- Customize your theme here. -->
 
     </style>
-    <style name="poppins_bold" parent="android:Widget.TextView">
+    <style name="poppins_semibold" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/poppinsemibold</item>
+    </style>
+
+    <style name="poppins_bold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppinsbold</item>
     </style>
 
     <style name="MenuGroupText" parent="TextAppearance.AppCompat.Medium">
