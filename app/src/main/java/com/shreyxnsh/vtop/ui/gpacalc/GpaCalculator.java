@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.transition.Slide;
 
 import android.annotation.SuppressLint;
@@ -37,19 +38,21 @@ import java.util.Map;
 import java.util.Objects;
 
 public class GpaCalculator extends AppCompatActivity {
+    private Toolbar toolbar;
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gpa_calculator);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("  GPA Calculator");
-        actionBar.setIcon(R.drawable.ic_baseline_calculate_24);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+        toolbar = findViewById(R.id.appbarGPA);
+
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("GPA Calculator");
+        toolbar.setTitleTextAppearance(this, R.style.poppins_bold);
+
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressLint({"WrongConstant", "ResourceType"})
