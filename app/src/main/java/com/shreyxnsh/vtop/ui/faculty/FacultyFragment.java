@@ -56,6 +56,7 @@ public class FacultyFragment extends Fragment {
         faculty_search = view.findViewById(R.id.faculty_search);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Faculty");
+        reference.keepSynced(true);
         csDepartment();
         mechDepartment();
         eeeDepartment();

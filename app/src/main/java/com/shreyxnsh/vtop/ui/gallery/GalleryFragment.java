@@ -42,6 +42,7 @@ public class GalleryFragment extends Fragment {
         aadhavRV = view.findViewById(R.id.aadhavRV);
 
         reference = FirebaseDatabase.getInstance().getReference().child("gallery");
+        reference.keepSynced(true);
 
         getAadhavImage();
         getConvoImage();

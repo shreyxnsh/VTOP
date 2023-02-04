@@ -44,6 +44,7 @@ public class NoticeFragment extends Fragment {
 
         noticeRV = view.findViewById(R.id.noticeRV);
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
+        reference.keepSynced(true);
 
         progress_anim = view.findViewById(R.id.progress_anim);
 

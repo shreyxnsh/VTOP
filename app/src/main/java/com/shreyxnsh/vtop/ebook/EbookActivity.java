@@ -63,6 +63,7 @@ public class EbookActivity extends AppCompatActivity {
 
         ebookRV = findViewById(R.id.ebookRV);
         reference = FirebaseDatabase.getInstance().getReference().child("pdf");
+        reference.keepSynced(true);
         shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
         shimmerLinearLayout = findViewById(R.id.shimmerLinearLayout);
         pdf_search = findViewById(R.id.pdf_search);

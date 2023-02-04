@@ -13,6 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/vtopicon"
         android:supportsRtl="true"
+        android:name=".OfflineData"
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
