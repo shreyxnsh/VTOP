@@ -17,6 +17,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
+import com.shreyxnsh.vtop.ui.home.HomeFragment;
 
 public class OnBoardingScreen extends AppCompatActivity {
 
@@ -51,6 +52,13 @@ public class OnBoardingScreen extends AppCompatActivity {
         //default dot position
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+        getStartedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
     }
 
 
