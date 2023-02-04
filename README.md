@@ -7,10 +7,15 @@ Welcome to VTOP, the official college application for Vellore Institute of Techn
 ## Features
 
 - 👨‍🏫 Faculty Database : Now, you can search amongst faculties and get their data within seconds. 
+
 - 🔔 Notices Section : No need to open Gmail! Get all the notices on your fingertips. 
+
 - 📖 E-books : Stuck in finding pdf? No worries, we've got you covered. Access all the learning material on VTOP
+
 - ➗ CGPA Calculator : Got your marks, but where do you stand? Know your GPA / CGPA by entering your marks and course credits.
+
 - 🥳 Events : It was a great event! What about the memories? View all the event images in a single click!
+
 - :shushing_face: Offline Capabilities : You dont have to wait until the data gets loaded everytime you open the app. VTOP comes with offline capabilities where users just need to load the data once and view it even if there is no internet access.
 
 ## Screenshots
