@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:backgroundTint="#404B55"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_below="@id/toolbarCL"
         android:padding="15dp"
         app:cardCornerRadius="15dp"

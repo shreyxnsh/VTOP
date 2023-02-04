@@ -4,7 +4,7 @@
     android:padding="10dp"
     android:layout_width="match_parent"
     app:cardCornerRadius="15dp"
-    android:backgroundTint="#404B55"
+    android:backgroundTint="@color/colorPrimary"
     android:id="@+id/facultyCard"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
