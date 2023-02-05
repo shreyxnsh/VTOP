@@ -29,6 +29,11 @@
         android:icon="@drawable/theme_icon"
         android:title="Themes" />
 
+    <item
+        android:id="@+id/navigation_feeback"
+        android:icon="@drawable/baseline_feedback_24"
+        android:title="Feedback" />
+
 
     <item
         android:id="@+id/navigation_shareus"
