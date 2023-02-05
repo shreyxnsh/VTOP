@@ -44,8 +44,9 @@
 
     //themes
     <string-array name="theme">
-        <item>Light</item>
+        <item>Default</item>
         <item>Dark</item>
+        <item>Light</item>
     </string-array>
 
     <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Light.Dialog">

@@ -58,9 +58,6 @@ public class EbookActivity extends AppCompatActivity {
         toolbar.setTitle("E-books");
         toolbar.setTitleTextAppearance(this, R.style.poppins_bold);
 
-
-
-
         ebookRV = findViewById(R.id.ebookRV);
         reference = FirebaseDatabase.getInstance().getReference().child("pdf");
         reference.keepSynced(true);

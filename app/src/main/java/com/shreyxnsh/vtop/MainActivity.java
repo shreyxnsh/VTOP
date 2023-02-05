@@ -55,6 +55,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static final float END_SCALE = 0.7f;
     private Toolbar toolbar;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private int checkedItem;
+    private String selected;
+    private final String CHECKEDITEM  = "checked_item";
+
 
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
     @Override
@@ -69,7 +75,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.navigation_view);
         contentView = findViewById(R.id.contentView);
         toolbar = findViewById(R.id.appbar);
-        
+
+
+        sharedPreferences = this.getSharedPreferences("themes", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+
 
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.start, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -206,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, EbookActivity.class));
                 break;
             case R.id.navigation_theme:
-                Toast.makeText(this, "Themes", Toast.LENGTH_SHORT).show();
+                showdialog();
                 break;
             case R.id.navigation_cgpa:
                 startActivity(new Intent(this, GpaCalculator.class));
@@ -242,7 +253,64 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    private void showdialog() {
+
+        String[] themes = this.getResources().getStringArray(R.array.theme);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        builder.setTitle("Select theme");
+        builder.setSingleChoiceItems(R.array.theme, getCheckedItem(), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                selected = themes[which];
+                checkedItem = which;
+
+            }
+        });
+        builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (selected == null){
+                    selected = themes[which];
+                    checkedItem = which;
+                }
+                switch (selected){
+                    case "Default":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        break;
+                    case "Dark":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        break;
+                    case "Light":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        break;
+                }
+                setCheckedItem(which);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private int getCheckedItem(){
+        return sharedPreferences.getInt(CHECKEDITEM,0);
+
+    }
+    private void setCheckedItem(int i){
+        editor.putInt(CHECKEDITEM,i);
+        editor.apply();
+    }
+
+
+
     public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
+
+
 }

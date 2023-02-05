@@ -36,11 +36,8 @@ public class NoticeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notice, container, false);
-
 
         noticeRV = view.findViewById(R.id.noticeRV);
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
@@ -79,7 +76,6 @@ public class NoticeFragment extends Fragment {
                 Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
