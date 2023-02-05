@@ -41,6 +41,10 @@
     <string name="gmaillink">mailto:shreyanshatwork@gmail.com</string>
     <string name="linkedinlink">https://linkedin.com/in/shreyxnsh</string>
     <string name="githublink">https://github.com/shreyxnsh</string>
+    <string name="sasl"><![CDATA[School of Advanced Sciences & Languages]]></string>
+    <string name="sbio">School of Biosciences, Engineering and Technology</string>
+    <string name="seee"><![CDATA[School of Electrical & Electronics Engineering]]></string>
+    <string name="smee">School of Mechanical Engineering</string>
 
     //themes
     <string-array name="theme">

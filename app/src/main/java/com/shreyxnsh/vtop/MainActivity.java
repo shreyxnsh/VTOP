@@ -34,6 +34,7 @@ import com.shreyxnsh.vtop.ebook.EbookActivity;
 import com.shreyxnsh.vtop.ui.aboutus.AboutUsFragment;
 import com.shreyxnsh.vtop.ui.developers.Developers;
 import com.shreyxnsh.vtop.ui.faculty.FacultyFragment;
+import com.shreyxnsh.vtop.ui.feedbacks.FeedbackActivity;
 import com.shreyxnsh.vtop.ui.gallery.GalleryFragment;
 import com.shreyxnsh.vtop.ui.gpacalc.GpaCalculator;
 import com.shreyxnsh.vtop.ui.home.HomeFragment;
@@ -80,6 +81,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         sharedPreferences = this.getSharedPreferences("themes", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
+        switch (getCheckedItem()){
+            case 0:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+            case 1:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case 2:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
 
 
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.start, R.string.close);
@@ -222,13 +234,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.navigation_cgpa:
                 startActivity(new Intent(this, GpaCalculator.class));
                 break;
+            case R.id.navigation_feeback:
+                startActivity(new Intent(this, FeedbackActivity.class));
+                break;
             case R.id.navigation_websites:
                 uri = Uri.parse(getString(R.string.vtop_website_link));
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
             case R.id.navigation_shareus:
-
                 try {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
@@ -256,7 +270,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showdialog() {
 
         String[] themes = this.getResources().getStringArray(R.array.theme);
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this, R.style.AlertDialog);
         builder.setTitle("Select theme");
         builder.setSingleChoiceItems(R.array.theme, getCheckedItem(), new DialogInterface.OnClickListener() {
             @Override
@@ -284,7 +298,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                         break;
                 }
-                setCheckedItem(which);
+                setCheckedItem(checkedItem);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

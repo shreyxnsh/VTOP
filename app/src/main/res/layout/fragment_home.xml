@@ -50,89 +50,7 @@
                 android:textColor="@color/textColor"
                 android:fontFamily="@font/poppinsmedium"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:background="@color/darkColor">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="36dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Departments"
-                        android:layout_marginTop="@dimen/text_margin"
-                        android:textSize="@dimen/title_size1"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/prodsansbold"/>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#fff"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="School of Computer Science"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/textColor"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/prodsansregular"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="School of Computer Science"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/textColor"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/prodsansregular"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="School of Computer Science"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/textColor"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/prodsansregular"/>
-
-                        </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -148,7 +66,7 @@
                     android:textSize="@dimen/title_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansbold"/>
+                    android:fontFamily="@font/poppinsbold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -159,7 +77,7 @@
                     android:textSize="@dimen/text_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansregular"/>
+                    android:fontFamily="@font/poppinsemibold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -170,7 +88,7 @@
                     android:textSize="@dimen/text_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansregular"/>
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -181,7 +99,7 @@
                     android:textSize="@dimen/text_size1"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/prodsansregular"/>
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <ImageView
                     android:id="@+id/map"

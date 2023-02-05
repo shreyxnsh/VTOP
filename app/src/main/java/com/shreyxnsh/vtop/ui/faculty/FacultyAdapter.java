@@ -59,7 +59,6 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         } catch (Exception e) {
             e.printStackTrace();
         }
-        holder.facultyCard.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), rv_anim));
 
     }
 

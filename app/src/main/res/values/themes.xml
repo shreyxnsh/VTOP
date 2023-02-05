@@ -32,4 +32,9 @@
         <item name="android:textColorSecondary">@color/light_blue</item>
     </style>
 
+    <style name="AlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="android:textColorSecondary">@color/light_blue</item>
+    </style>
+
 </resources>

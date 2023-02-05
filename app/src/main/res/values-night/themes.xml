@@ -29,4 +29,9 @@
         <item name="android:textColor">#fff</item>
     </style>
 
+    <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorAccent">@color/light_blue</item>
+        <item name="android:textColorSecondary">@color/light_blue</item>
+    </style>
+
 </resources>

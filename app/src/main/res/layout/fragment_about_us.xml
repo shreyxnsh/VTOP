@@ -123,10 +123,125 @@
             android:id="@+id/viewpager"
             android:layout_marginTop="@dimen/text_margin"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="150dp"
             android:foregroundGravity="center"
             android:clipToPadding="false"
             android:overScrollMode="never"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@color/darkColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Departments"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsbold"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sasl"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_marginHorizontal="@dimen/text_margin"
+                            android:textSize="@dimen/text_size1"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/poppinsemibold"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/grey"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sbio"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_marginHorizontal="@dimen/text_margin"
+                            android:textSize="@dimen/text_size1"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/poppinsemibold"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/grey"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="School of Computer Science"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_marginHorizontal="@dimen/text_margin"
+                            android:textSize="@dimen/text_size1"
+                            android:textColor="@color/black"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/poppinsemibold"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/grey"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/seee"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_marginHorizontal="@dimen/text_margin"
+                            android:textSize="@dimen/text_size1"
+                            android:textColor="@color/black"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/poppinsemibold"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/grey"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/smee"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_marginHorizontal="@dimen/text_margin"
+                            android:textSize="@dimen/text_size1"
+                            android:textColor="@color/black"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/poppinsemibold"/>
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
