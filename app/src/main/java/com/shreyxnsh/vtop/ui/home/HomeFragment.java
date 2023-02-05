@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,14 @@ import android.widget.ImageView;
 
 import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
+import com.shreyxnsh.vtop.ui.aboutus.BranchAdapter;
+import com.shreyxnsh.vtop.ui.aboutus.BranchModel;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -26,12 +32,44 @@ public class HomeFragment extends Fragment {
     private SliderAdapter adapter;
     private SliderView sliderView;
     private ImageView map;
+    private ViewPager viewPager;
+    private BranchAdapter branchAdapter;
+    private List<BranchModel> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        list = new ArrayList<>();
+        list.add(new BranchModel(R.drawable.aero_icon, "B.Tech Aerospace Engineering (BAS)"));
+        list.add(new BranchModel(R.drawable.bio_icon, "B.Tech Bioengineering (BOE)"));
+
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (BCE)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning) (BAI)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Cyber Security & Digital Forensics) (BCY)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Cloud Computing & Automation) (BSA)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (E-Commerce Technology) (BET)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Education Technology) (BET)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Gaming Technology) (BCG)"));
+        list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Health Informatics) (BHI)"));
+
+        list.add(new BranchModel(R.drawable.ece_icon, "B.Tech Electronics & Communication Engineering (BEC)"));
+        list.add(new BranchModel(R.drawable.ece_icon, "B.Tech Electronics & Communication Engineering (Artificial Intelligence & Cybernetics) (BEC)"));
+
+        list.add(new BranchModel(R.drawable.mech_icon, "B.Tech Mechanical Engineering (BME)"));
+        list.add(new BranchModel(R.drawable.mech_icon, "B.Tech Mechanical Engineering (Artificial Intelligence & Robotics) (BMR)"));
+
+        // adapter
+        branchAdapter = new BranchAdapter(getContext(), list);
+        // viewpager initialisation
+        viewPager = view.findViewById(R.id.viewpager);
+
+        //setting adapter in viewpager
+        viewPager.setAdapter(branchAdapter);
+
+        return view;
 
     }
 

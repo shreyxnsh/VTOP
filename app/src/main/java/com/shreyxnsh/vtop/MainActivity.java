@@ -31,7 +31,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.shreyxnsh.vtop.ebook.EbookActivity;
-import com.shreyxnsh.vtop.ui.aboutus.AboutUsFragment;
 import com.shreyxnsh.vtop.ui.developers.Developers;
 import com.shreyxnsh.vtop.ui.faculty.FacultyFragment;
 import com.shreyxnsh.vtop.ui.feedbacks.FeedbackActivity;
@@ -126,9 +125,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case 4:
                         replace(new GalleryFragment());
                         break;
-                    case 5:
-                        replace(new AboutUsFragment());
-                        break;
 
                 }
                 return null;
@@ -152,7 +148,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_notifications_active_24));
         bottomNavigationView.add(new MeowBottomNavigation.Model(3, R.drawable.ic_baseline_people_24));
         bottomNavigationView.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_photo_library_24));
-        bottomNavigationView.add(new MeowBottomNavigation.Model(5, R.drawable.ic_baseline_info_24));
 
         // after starting app, show first fragment
         replace(new HomeFragment());
@@ -235,7 +230,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, GpaCalculator.class));
                 break;
             case R.id.navigation_feeback:
-                startActivity(new Intent(this, FeedbackActivity.class));
+//                startActivity(new Intent(this, FeedbackActivity.class));
+                Toast.makeText(this, "Hang on! We're still coding", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.navigation_websites:
                 uri = Uri.parse(getString(R.string.vtop_website_link));
