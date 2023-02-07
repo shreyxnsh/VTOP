@@ -29,6 +29,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Vivaan"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textSize="@dimen/title_size1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppinsemibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:id="@+id/vicharRV"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginVertical="8dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardElevation="15dp"
+            app:cardMaxElevation="15dp"
+            app:cardCornerRadius="15dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Aadhav'22"
                     android:layout_marginTop="@dimen/text_margin"
                     android:textSize="@dimen/title_size1"
@@ -105,38 +137,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:id="@+id/advityaRV"/>
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardElevation="15dp"
-            app:cardMaxElevation="15dp"
-            app:cardCornerRadius="15dp"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vivaan"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size1"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppinsemibold"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:id="@+id/vicharRV"/>
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
