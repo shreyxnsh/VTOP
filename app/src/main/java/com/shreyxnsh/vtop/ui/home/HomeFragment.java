@@ -1,5 +1,6 @@
 package com.shreyxnsh.vtop.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,12 +8,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
@@ -22,8 +26,12 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment {
 
@@ -35,6 +43,12 @@ public class HomeFragment extends Fragment {
     private ViewPager viewPager;
     private BranchAdapter branchAdapter;
     private List<BranchModel> list;
+    EventAdapter eventadapter;
+
+    // variables for latest event rv
+    RecyclerView eventRV;
+    ArrayList<String> dataSource;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,9 +83,25 @@ public class HomeFragment extends Fragment {
         //setting adapter in viewpager
         viewPager.setAdapter(branchAdapter);
 
+        eventRV = view.findViewById(R.id.eventsRV);
+        eventsRVData();
+
         return view;
 
     }
+
+    private void eventsRVData() {
+        eventRV.setHasFixedSize(true);
+        eventRV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false));
+
+        ArrayList<EventData> eventsList = new ArrayList<>();
+        eventsList.add(new EventData(R.drawable.facultydemo, "Vivaan", "09 Feb @ 10am", "Auditorium", "Insights Club"));
+        eventsList.add(new EventData(R.drawable.ic_githublogo, "Aadhav", "10 Feb @ 10am", "Auditorium", "AI Club"));
+
+        eventadapter = new EventAdapter(eventsList);
+        eventRV.setAdapter(eventadapter);
+    }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
