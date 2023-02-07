@@ -45,6 +45,7 @@
     <string name="sbio">School of Biosciences, Engineering and Technology</string>
     <string name="seee"><![CDATA[School of Electrical & Electronics Engineering]]></string>
     <string name="smee">School of Mechanical Engineering</string>
+    <string name="bund">Pratham Bundwani</string>
 
     //themes
     <string-array name="theme">

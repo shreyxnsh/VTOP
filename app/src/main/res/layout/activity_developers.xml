@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,164 +7,291 @@
     android:background="@color/backgroundCol"
     tools:context=".ui.developers.Developers">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbarCL"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/appbarDEV"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/backgroundCol"
+                    app:title="Developers"
+                    app:titleTextColor="@color/titleColor"
+                    style="@style/ToolbarColoredBackArrow"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_below="@id/toolbarCL"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/appbarDEV"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/backgroundCol"
-                app:title="Developers"
-                app:titleTextColor="@color/titleColor"
-                style="@style/ToolbarColoredBackArrow"/>
-
-        </com.google.android.material.appbar.AppBarLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_below="@id/toolbarCL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:padding="15dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="15dp">
-
-        <RelativeLayout
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <LinearLayout
-                android:id="@+id/info"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_below="@id/toolbarCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
 
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/facultyImage"
-                    android:layout_width="100dp"
-                    android:layout_height="120dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/facultydemo" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/devName"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/poppinsemibold"
-                        android:text="@string/dev_name"
-                        android:textColor="@color/white"
-                        android:textSize="24sp" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/devInfo"
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/facultyImage"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/facultydemo" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/devName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="@string/dev_name"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/devInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="20 | Pune, India."
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/description"
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/poppinsemibold"
-                        android:text="20 | Pune, India."
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        android:layout_below="@id/info"
+                        android:orientation="vertical">
 
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/description"
-                android:layout_marginTop="10dp"
+                        <TextView
+                            android:id="@+id/introText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/intro"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/skillsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/skills"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/queriesText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/queries"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/buttonsGL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/description"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/gmail"
+                            android:layout_weight="1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_gmail_svgrepo_com" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/linkedin"
+                            android:layout_width="50dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/github"
+                            android:layout_width="50dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_githublogo" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_below="@id/toolbarCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/info"
-                android:orientation="vertical">
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
 
-                <TextView
-                    android:id="@+id/introText"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:text="@string/intro"
-                    android:textColor="@color/white"/>
+                    android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/skillsText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:text="@string/skills"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/queriesText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:text="@string/queries"
-                    android:textColor="@color/white" />
+                    <LinearLayout
+                        android:id="@+id/infobund"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
 
-            </LinearLayout>
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/facultyImage2"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/facultydemo" />
 
-            <LinearLayout
-                android:id="@+id/buttonsGL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/description"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="3">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
 
-                <ImageView
-                    android:id="@+id/gmail"
-                    android:layout_weight="1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_gmail_svgrepo_com" />
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="@string/bund"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/linkedin"
-                    android:layout_width="50dp"
-                    android:layout_weight="1"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_linkedin" />
+                            <TextView
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/github"
-                    android:layout_width="50dp"
-                    android:layout_weight="1"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_githublogo" />
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="19 | Kanpur, India."
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/desc"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/infobund"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/intro"
+                            android:textColor="@color/white"/>
 
 
-            </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bundbuttonsGL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/desc"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/bundlinkedin"
+                            android:layout_width="50dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/bundgithub"
+                            android:layout_width="50dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_githublogo" />
 
 
-        </RelativeLayout>
+                    </LinearLayout>
 
 
-    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

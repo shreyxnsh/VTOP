@@ -64,7 +64,6 @@ public class FacultyFragment extends Fragment {
 //        addDataToList();
 
         return view;
-
     }
 
 
