@@ -17,11 +17,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
 import com.shreyxnsh.vtop.ui.aboutus.BranchAdapter;
 import com.shreyxnsh.vtop.ui.aboutus.BranchModel;
+import com.shreyxnsh.vtop.ui.events.EventAdapter;
+import com.shreyxnsh.vtop.ui.events.EventData;
+import com.shreyxnsh.vtop.ui.faculty.FacultyAdapter;
+import com.shreyxnsh.vtop.ui.faculty.FacultyData;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -43,12 +53,13 @@ public class HomeFragment extends Fragment {
     private ViewPager viewPager;
     private BranchAdapter branchAdapter;
     private List<BranchModel> list;
-    EventAdapter eventadapter;
 
-    // variables for latest event rv
+    // latest event variables
+    EventAdapter eventAdapter;
+    private DatabaseReference reference;
     RecyclerView eventRV;
-    ArrayList<String> dataSource;
-    LinearLayoutManager linearLayoutManager;
+    private List<EventData> eventDataList;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,23 +95,45 @@ public class HomeFragment extends Fragment {
         viewPager.setAdapter(branchAdapter);
 
         eventRV = view.findViewById(R.id.eventsRV);
-        eventsRVData();
+        eventRV.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+        reference = FirebaseDatabase.getInstance().getReference().child("Events");
+        reference.keepSynced(true);
+        getEventData();
 
         return view;
 
     }
 
-    private void eventsRVData() {
-        eventRV.setHasFixedSize(true);
-        eventRV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false));
+    private void getEventData() {
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                list = new ArrayList<>();
+                eventDataList = new ArrayList<>();
+                if(!snapshot.exists()){
+                    eventRV.setVisibility(View.GONE);
+                }else{
+                    eventRV.setVisibility(View.VISIBLE);
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                        EventData data = dataSnapshot.getValue(EventData.class);
+                        eventDataList.add(0,data);
+//                        list.addAll(cseList);
+                    }
+                    eventRV.setHasFixedSize(true);
+                    eventRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    eventAdapter = new EventAdapter(eventDataList, getContext());
+                    eventRV.setAdapter(eventAdapter);
+                }
+            }
 
-        ArrayList<EventData> eventsList = new ArrayList<>();
-        eventsList.add(new EventData(R.drawable.facultydemo, "Vivaan", "09 Feb @ 10am", "Auditorium", "Insights Club"));
-        eventsList.add(new EventData(R.drawable.ic_githublogo, "Aadhav", "10 Feb @ 10am", "Auditorium", "AI Club"));
-
-        eventadapter = new EventAdapter(eventsList);
-        eventRV.setAdapter(eventadapter);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
 
 
     @Override
