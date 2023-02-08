@@ -47,6 +47,12 @@
     <string name="smee">School of Mechanical Engineering</string>
     <string name="bund">Pratham Bundwani</string>
 
+
+    <string name="stuCoord">Student Coordinator :</string>
+    <string name="facCoord">Faculty Coordinator :</string>
+
+
+
     //themes
     <string-array name="theme">
         <item>Default</item>
