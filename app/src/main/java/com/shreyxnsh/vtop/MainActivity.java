@@ -31,6 +31,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.shreyxnsh.vtop.ebook.EbookActivity;
+import com.shreyxnsh.vtop.ui.clubs.ClubActivity;
 import com.shreyxnsh.vtop.ui.developers.Developers;
 import com.shreyxnsh.vtop.ui.faculty.FacultyFragment;
 import com.shreyxnsh.vtop.ui.feedbacks.FeedbackActivity;
@@ -228,6 +229,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.navigation_cgpa:
                 startActivity(new Intent(this, GpaCalculator.class));
+                break;
+            case R.id.navigation_clubs:
+                startActivity(new Intent(this, ClubActivity.class));
                 break;
             case R.id.navigation_feeback:
 //                startActivity(new Intent(this, FeedbackActivity.class));

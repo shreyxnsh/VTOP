@@ -17,6 +17,10 @@
         android:theme="@style/Theme.VTOP"
         tools:targetApi="31">
         <activity
+            android:name=".ui.clubs.ClubActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.feedbacks.FeedbackActivity"
             android:exported="false" />
         <activity
