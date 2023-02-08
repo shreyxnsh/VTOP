@@ -104,6 +104,12 @@
                 android:foregroundGravity="center"
                 android:clipToPadding="false"
                 android:overScrollMode="never"/>
+            <View
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_margin="14dp"
+                android:layout_height="0.5dp"
+                android:background="@color/grey" />
 
             <LinearLayout
                 android:layout_width="match_parent"

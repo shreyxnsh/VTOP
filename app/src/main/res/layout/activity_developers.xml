@@ -10,10 +10,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbarCL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
@@ -24,12 +26,12 @@
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/appbarDEV"
+                    style="@style/ToolbarColoredBackArrow"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@color/backgroundCol"
                     app:title="Developers"
-                    app:titleTextColor="@color/titleColor"
-                    style="@style/ToolbarColoredBackArrow"/>
+                    app:titleTextColor="@color/titleColor" />
 
             </com.google.android.material.appbar.AppBarLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -42,9 +44,9 @@
             android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_below="@id/toolbarCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:padding="15dp"
@@ -61,7 +63,8 @@
                         android:id="@+id/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
 
                         <de.hdodenhof.circleimageview.CircleImageView
@@ -69,20 +72,24 @@
                             android:layout_width="100dp"
                             android:layout_height="120dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
                             android:src="@drawable/facultydemo" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
                             android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/devName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="25dp"
                                 android:layout_marginLeft="10dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/poppinsemibold"
                                 android:text="@string/dev_name"
+                                android:textAlignment="textEnd"
                                 android:textColor="@color/white"
                                 android:textSize="24sp" />
 
@@ -99,12 +106,13 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/description"
-                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/info"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -113,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppinsmedium"
                             android:text="@string/intro"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:id="@+id/skillsText"
@@ -147,26 +155,26 @@
 
                         <ImageView
                             android:id="@+id/gmail"
-                            android:layout_weight="1"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
                             android:src="@drawable/ic_gmail_svgrepo_com" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/linkedin"
                             android:layout_width="50dp"
-                            android:layout_weight="1"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
                             android:src="@drawable/ic_linkedin" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/github"
                             android:layout_width="50dp"
-                            android:layout_weight="1"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
                             android:src="@drawable/ic_githublogo" />
 
 
@@ -179,9 +187,9 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_below="@id/toolbarCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:padding="15dp"
@@ -197,7 +205,8 @@
                         android:id="@+id/infobund"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
 
                         <de.hdodenhof.circleimageview.CircleImageView
@@ -205,20 +214,24 @@
                             android:layout_width="100dp"
                             android:layout_height="120dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
                             android:src="@drawable/facultydemo" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
                             android:orientation="vertical">
+
                             <TextView
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="25dp"
                                 android:layout_marginLeft="10dp"
+                                android:layout_marginTop="25dp"
                                 android:fontFamily="@font/poppinsemibold"
                                 android:text="@string/bund"
+                                android:textAlignment="textEnd"
                                 android:textColor="@color/white"
                                 android:textSize="24sp" />
 
@@ -235,12 +248,13 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/desc"
-                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/infobund"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -248,8 +262,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppinsmedium"
                             android:text="@string/intro"
-                            android:textColor="@color/white"/>
-
+                            android:textColor="@color/white" />
 
 
                     </LinearLayout>
@@ -259,24 +272,254 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/desc"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:weightSum="2">
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/bundlinkedin"
                             android:layout_width="50dp"
-                            android:layout_weight="1"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
                             android:src="@drawable/ic_linkedin" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/bundgithub"
                             android:layout_width="50dp"
-                            android:layout_weight="1"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_githublogo" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/infonikki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/facultyImage3"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/facultydemo" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="Nikita Raut"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="20 | Nagpur, India."
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/descnik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/infonikki"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/intro"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lomlbuttonsGL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/descnik"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/lomllinkedin"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/lomlgithub"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_githublogo" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/infodalla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/facultyImage4"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/facultydemo" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="Syed Haider Abbas"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="19 | Bhopal, India."
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/descdalla"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/infodalla"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/intro"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dallabuttonsGL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/descdalla"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dallalinkedin"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dallagithub"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
                             android:src="@drawable/ic_githublogo" />
 
 
