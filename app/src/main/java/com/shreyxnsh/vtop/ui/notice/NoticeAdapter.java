@@ -39,6 +39,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
         return new NoticeViewAdapter(view);
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public void onBindViewHolder(@NonNull NoticeViewAdapter holder, @SuppressLint("RecyclerView") int position) {
         //getting data from NoticeData class in currentItem variable in onBind method
