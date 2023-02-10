@@ -1,14 +1,20 @@
 package com.shreyxnsh.vtop.ui.faculty;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +33,8 @@ import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class FacultyFragment extends Fragment {
 
@@ -43,7 +51,7 @@ public class FacultyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_faculty, container, false);
+        View view = inflater.inflate(R.layout.fragment_faculty, container, false);
 
 
         facultyRV = view.findViewById(R.id.facultyListRV);
@@ -56,15 +64,38 @@ public class FacultyFragment extends Fragment {
 
         reference = FirebaseDatabase.getInstance().getReference().child("Faculty");
         reference.keepSynced(true);
-        csDepartment();
-        mechDepartment();
-        eeeDepartment();
-        aslDepartment();
+
+
+        MyAsyncTask myAsyncTask = new MyAsyncTask();
+        myAsyncTask.execute();
+
+
+
+
 //        addDataToList();
 
         return view;
 
     }
+
+    @SuppressLint("StaticFieldLeak")
+    public class MyAsyncTask extends AsyncTask<Void, Void, String>   {
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            csDepartment();
+            mechDepartment();
+            eeeDepartment();
+            aslDepartment();
+        }
+    }
+
 
 
     private void csDepartment() {
@@ -74,15 +105,15 @@ public class FacultyFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 //                list = new ArrayList<>();
                 facultyList = new ArrayList<>();
-                if(!snapshot.exists()){
+                if (!snapshot.exists()) {
                     nodata.setVisibility(View.VISIBLE);
                     facultyRV.setVisibility(View.GONE);
-                }else{
+                } else {
                     nodata.setVisibility(View.GONE);
                     facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0,data);
+                        facultyList.add(0, data);
 //                        list.addAll(cseList);
                     }
                     facultyRV.setHasFixedSize(true);
@@ -95,7 +126,7 @@ public class FacultyFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -105,15 +136,15 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!snapshot.exists()){
+                if (!snapshot.exists()) {
                     nodata.setVisibility(View.VISIBLE);
                     facultyRV.setVisibility(View.GONE);
-                }else{
+                } else {
                     nodata.setVisibility(View.GONE);
                     facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0,data);
+                        facultyList.add(0, data);
 //                        list.addAll(mecList);
 
                     }
@@ -127,7 +158,7 @@ public class FacultyFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -137,13 +168,13 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!snapshot.exists()){
+                if (!snapshot.exists()) {
                     nodata.setVisibility(View.VISIBLE);
                     facultyRV.setVisibility(View.GONE);
-                }else{
+                } else {
                     nodata.setVisibility(View.GONE);
                     facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
                         facultyList.add(data);
 //                        list.addAll(eeeList);
@@ -159,7 +190,7 @@ public class FacultyFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -169,15 +200,15 @@ public class FacultyFragment extends Fragment {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!snapshot.exists()){
+                if (!snapshot.exists()) {
                     nodata.setVisibility(View.VISIBLE);
                     facultyRV.setVisibility(View.GONE);
-                }else{
+                } else {
                     nodata.setVisibility(View.GONE);
                     facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0,data);
+                        facultyList.add(0, data);
 //                        list.addAll(aslList);
 
                     }
@@ -191,7 +222,7 @@ public class FacultyFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -213,23 +244,24 @@ public class FacultyFragment extends Fragment {
             }
         });
     }
-    private void filter(String text){
+
+    private void filter(String text) {
         ArrayList<FacultyData> filterList = new ArrayList<>();
-        for (FacultyData item : facultyList){
-            if (item.getName().toLowerCase().contains(text.toLowerCase())){
+        for (FacultyData item : facultyList) {
+            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
                 filterList.add(item);
             }
 
         }
-        if (filterList.isEmpty()){
+        if (filterList.isEmpty()) {
             Toast.makeText(getContext(), "No data Found", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             adapter.FilteredList(filterList);
         }
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         ((MainActivity) getActivity()).setActionBarTitle("Faculty Info");
     }

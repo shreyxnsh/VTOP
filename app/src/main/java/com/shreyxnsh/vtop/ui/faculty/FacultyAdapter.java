@@ -2,7 +2,9 @@ package com.shreyxnsh.vtop.ui.faculty;
 
 import static com.shreyxnsh.vtop.R.anim.rv_anim;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
@@ -54,13 +57,15 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         holder.email.setText(item.getEmail());
         holder.designation.setText(item.getDesignation());
         holder.cabin.setText(item.getCabin());
-        try {
-            Picasso.get().load(item.getImage()).into(holder.image);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+                try {
+                    Picasso.get().load(item.getImage()).into(holder.image);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
     }
+
 
     public class FacultyViewAdapter extends RecyclerView.ViewHolder {
 
