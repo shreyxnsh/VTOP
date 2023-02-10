@@ -42,22 +42,20 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp">
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/feedname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
                 android:layout_centerHorizontal="true"
                 android:gravity="start|top"
+                android:hint="Name"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textCapSentences"
-                android:hint="Name"
+                android:textAlignment="viewStart"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/textColor"
-                />
+                android:textColorHint="@color/textColor" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -70,15 +68,14 @@
                 android:id="@+id/feednumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
                 android:layout_centerHorizontal="true"
                 android:gravity="start|top"
+                android:hint="Registration number"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textCapSentences"
-                android:hint="Registration number"
+                android:textAlignment="viewStart"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/textColor"
-                />
+                android:textColorHint="@color/textColor" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -91,15 +88,14 @@
                 android:id="@+id/feedemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
                 android:layout_centerHorizontal="true"
                 android:gravity="start|top"
+                android:hint="E-mail"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textCapSentences"
-                android:hint="E-mail"
+                android:textAlignment="viewStart"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/textColor"
-                />
+                android:textColorHint="@color/textColor" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -113,16 +109,15 @@
                 android:id="@+id/feedmessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="250dp"
-                android:textAlignment="viewStart"
                 android:layout_centerHorizontal="true"
                 android:gravity="start|top"
+                android:hint="Message"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textCapSentences"
-                android:hint="Message"
+                android:minHeight="250dp"
+                android:textAlignment="viewStart"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/textColor"
-                />
+                android:textColorHint="@color/textColor" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
@@ -140,14 +135,14 @@
             android:id="@+id/feedbtnsend"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:layout_marginTop="1dp"
-            android:text="Send message"
-            app:cornerRadius="25dp"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_marginTop="1dp"
             android:backgroundTint="@color/dark_blue"
+            android:gravity="center"
+            android:text="Send message"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textAllCaps="false" />
+            app:cornerRadius="25dp" />
 
     </LinearLayout>
 
