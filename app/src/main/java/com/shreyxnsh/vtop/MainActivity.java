@@ -209,6 +209,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent intent;
@@ -234,8 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, ClubActivity.class));
                 break;
             case R.id.navigation_feeback:
-//                startActivity(new Intent(this, FeedbackActivity.class));
-                Toast.makeText(this, "Hang on! We're still coding", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, FeedbackActivity.class));
                 break;
             case R.id.navigation_websites:
                 uri = Uri.parse(getString(R.string.vtop_website_link));

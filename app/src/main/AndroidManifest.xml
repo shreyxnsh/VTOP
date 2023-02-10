@@ -8,6 +8,7 @@
     <application
         android:name=".OfflineData"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/vtopicon"
@@ -22,6 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.feedbacks.FeedbackActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.gpacalc.GpaCalculator"

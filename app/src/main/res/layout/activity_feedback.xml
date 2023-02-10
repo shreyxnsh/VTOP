@@ -1,42 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.feedbacks.FeedbackActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/feedtoolbarCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appbarFeed"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/backgroundCol"
+                app:title="Feedback"
+                app:titleTextColor="@color/titleColor"
+                style="@style/ToolbarColoredBackArrow"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_below="@id/feedtoolbarCL"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/pdfTitle"
+            <EditText
+                android:id="@+id/feedname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="E-book Title" />
+                android:textAlignment="viewStart"
+                android:layout_centerHorizontal="true"
+                android:gravity="start|top"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine|textCapSentences"
+                android:hint="Name"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/feednumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_centerHorizontal="true"
+                android:gravity="start|top"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine|textCapSentences"
+                android:hint="Registration number"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/feedemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_centerHorizontal="true"
+                android:gravity="start|top"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine|textCapSentences"
+                android:hint="E-mail"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upload E-book"
-            android:layout_marginTop="16dp"
-            android:hint="upload"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:id="@+id/uploadPdfBtn"/>
+            android:layout_marginTop="16dp">
 
+            <EditText
+                android:id="@+id/feedmessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="250dp"
+                android:textAlignment="viewStart"
+                android:layout_centerHorizontal="true"
+                android:gravity="start|top"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine|textCapSentences"
+                android:hint="Message"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/feedspinner"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="16dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:entries="@array/Batch"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/feedbtnsend"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:text="Send message"
+            app:cornerRadius="25dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:backgroundTint="@color/dark_blue"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
 
-</ScrollView>
+</RelativeLayout>

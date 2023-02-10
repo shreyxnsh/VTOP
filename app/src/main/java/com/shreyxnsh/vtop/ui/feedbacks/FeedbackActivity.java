@@ -2,8 +2,10 @@ package com.shreyxnsh.vtop.ui.feedbacks;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,12 +13,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -25,87 +29,62 @@ import com.google.firebase.storage.UploadTask;
 import com.shreyxnsh.vtop.R;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class FeedbackActivity extends AppCompatActivity {
 
-    private final int REQ = 1;
-    private Uri pdfData;
-    private EditText pdfTitle;
-    private Button uploadPdfBtn;
-    private String pdfName, title;
-    private DatabaseReference databaseReference;
-    private StorageReference storageReference;
-    String downloadUrl = "";
-    private ProgressDialog pd;
+    EditText edtname,edtnumber, edtemail,edtmessage;
+    MaterialButton btnsend;
+    Spinner spinner;
+    DatabaseReference databaseReference;
+    private Toolbar toolbar;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
-        pdfTitle = findViewById(R.id.pdfTitle);
-        uploadPdfBtn = findViewById(R.id.uploadPdfBtn);
+        toolbar = findViewById(R.id.appbarFeed);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        storageReference = FirebaseStorage.getInstance().getReference();
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("Feedback");
+        toolbar.setTitleTextAppearance(this, R.style.poppins_bold);
 
-        pd = new ProgressDialog(this);
 
-        uploadPdfBtn.setOnClickListener(new View.OnClickListener() {
+        edtname=findViewById(R.id.feedname);
+        edtnumber =findViewById(R.id.feednumber);
+        edtemail=findViewById(R.id.feedemail);
+        edtmessage=findViewById(R.id.feedmessage);
+        btnsend=findViewById(R.id.feedbtnsend);
+        spinner=findViewById(R.id.feedspinner);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("Feedback");
+
+        btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                title = pdfName;
-
-
-                    uploadPdf();
-
+            public void onClick(View view) {
+                getFeedback();
             }
         });
-    }
-    private void uploadPdf() {
-        pd.setTitle("Please wait...");
-        pd.setMessage("Uploading pdf file...");
-        pd.show();
-        StorageReference reference = storageReference.child("feedback/"+pdfName+"-"+System.currentTimeMillis());
-        reference.putFile(pdfData)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        pd.dismiss();
-                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                        while (!uriTask.isComplete());
-                        Uri uri = uriTask.getResult();
-                        downloadUrl = String.valueOf(uri);
-                        uploadData(String.valueOf(uri));
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        pd.dismiss();
-                        Toast.makeText(FeedbackActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+
+
     }
 
-    private void uploadData(String valueOf) {
-        String uniquekey = databaseReference.child("feedback").push().getKey();
-        HashMap data = new HashMap();
-        data.put("pdfTitle",pdfName);
+    private void getFeedback() {
 
-        databaseReference.child("pdf").child(uniquekey).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                pd.dismiss();
+        String name=edtname.getText().toString();
+        String number=edtnumber.getText().toString();
+        String email=edtemail.getText().toString();
+        String message=edtmessage.getText().toString();
+        String batch=spinner.getSelectedItem().toString();
 
-                Toast.makeText(FeedbackActivity.this, "Pdf uploaded successfully", Toast.LENGTH_SHORT).show();
-                pdfTitle.setText("");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                pd.dismiss();
-                Toast.makeText(FeedbackActivity.this, "Failed to upload pdf", Toast.LENGTH_SHORT).show();
-            }
-        });
+        FeedbackData feedbackData=new FeedbackData(name,number,email,message,batch);
+
+        databaseReference.push().setValue(feedbackData);
+        Toast.makeText(this, "Your FeedBack is sent! ", Toast.LENGTH_SHORT).show();
     }
 }
