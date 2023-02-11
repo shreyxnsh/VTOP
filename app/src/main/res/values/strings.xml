@@ -50,6 +50,7 @@
 
     <string name="stuCoord">Student Coordinator :</string>
     <string name="facCoord">Faculty Coordinator :</string>
+    <string name="scse"><![CDATA[School of Computing Science & Engineering]]></string>
 
     <array name="Batch">
         <item>Select Batch</item>

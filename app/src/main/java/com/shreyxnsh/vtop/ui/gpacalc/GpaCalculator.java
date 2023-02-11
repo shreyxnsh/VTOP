@@ -140,7 +140,7 @@ public class GpaCalculator extends AppCompatActivity {
         });
         button.setText("Calculate");
         gridLayout.addView(button, parseInt * 3);
-        Toast.makeText(this, "Subjects Added Successfully", 0).show();
+        Toast.makeText(this, "Courses Added Successfully", 0).show();
     }
 
     private void show(int noOfSubjects) {
@@ -187,10 +187,9 @@ public class GpaCalculator extends AppCompatActivity {
 
         float gpa = ((float)obtainedCreditPoints)/totalCreditPoints;
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setTitle("Calculated!");
-        builder.setIcon(R.drawable.ic_baseline_check_circle_outline_24);
-        builder.setMessage( "Your GPA is : "+Math.round(gpa*100.0)/100.0);
+        builder.setMessage( "Your GPA is :  "+Math.round(gpa*100.0)/100.0);
         builder.setNegativeButton((CharSequence) "Okay", (DialogInterface.OnClickListener) null).setCancelable(false);
         builder.create();
         builder.show();

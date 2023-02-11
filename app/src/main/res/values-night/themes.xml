@@ -34,4 +34,11 @@
         <item name="android:textColorSecondary">@color/light_blue</item>
     </style>
 
+    <style name="AlertDialogCustom" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/poppinsbold</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
 </resources>
