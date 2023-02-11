@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundCol"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
     <ScrollView
@@ -17,98 +17,100 @@
             android:orientation="vertical">
 
             <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/sliderView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:id="@+id/sliderView"
-                app:sliderScrollTimeInSec="3"
                 app:sliderAnimationDuration="750"
                 app:sliderAutoCycleDirection="back_and_forth"
                 app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorUnselectedColor="#c1c1c1"
                 app:sliderIndicatorSelectedColor="#5A5858"
-                app:sliderStartAutoCycle="true"
-                />
+                app:sliderIndicatorUnselectedColor="#c1c1c1"
+                app:sliderScrollTimeInSec="3"
+                app:sliderStartAutoCycle="true" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello VITians!"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
                 android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppinsextrabold"
+                android:text="Hello VITians!"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/poppinsextrabold"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/aboutclg"
-                android:layout_marginTop="12sp"
-                android:layout_marginHorizontal="14sp"
-                android:textSize="14sp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="14sp"
+                android:layout_marginTop="12sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/aboutclg"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/poppinsmedium"/>
+                android:textSize="14sp" />
 
             <View
                 android:id="@+id/line4"
                 android:layout_width="match_parent"
-                android:layout_margin="14dp"
                 android:layout_height="0.5dp"
+                android:layout_margin="14dp"
                 android:background="@color/grey" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latest events  -> "
-                android:textSize="20sp"
                 android:layout_marginHorizontal="14dp"
+                android:fontFamily="@font/poppinsemibold"
+                android:text="Latest events  -> "
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/poppinsemibold"/>
+                android:textSize="20sp" />
+
             <LinearLayout
-                android:layout_margin="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
+                android:layout_margin="12dp"
                 android:orientation="vertical">
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/eventsRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </LinearLayout>
 
             <View
                 android:id="@+id/line3"
                 android:layout_width="match_parent"
-                android:layout_margin="14dp"
                 android:layout_height="0.5dp"
+                android:layout_margin="14dp"
                 android:background="@color/grey" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Branches offered  ->"
-                android:textSize="20sp"
                 android:layout_marginHorizontal="12dp"
+                android:fontFamily="@font/poppinsemibold"
+                android:text="Branches offered  ->"
                 android:textColor="@color/textColor"
-                android:fontFamily="@font/poppinsemibold"/>
+                android:textSize="20sp" />
 
             <androidx.viewpager.widget.ViewPager
-                android:padding="15dp"
                 android:id="@+id/viewpager"
-                android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:foregroundGravity="center"
+                android:layout_height="130dp"
+                android:layout_marginTop="12dp"
                 android:clipToPadding="false"
-                android:overScrollMode="never"/>
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+                android:padding="15dp" />
+
             <View
                 android:id="@+id/line6"
                 android:layout_width="match_parent"
-                android:layout_margin="14dp"
                 android:layout_height="0.5dp"
+                android:layout_margin="14dp"
                 android:background="@color/grey" />
 
             <LinearLayout
@@ -120,110 +122,118 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginHorizontal="12dp"
                     android:layout_marginVertical="12dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Departments"
+                        android:layout_marginHorizontal="12dp"
                         android:layout_marginTop="@dimen/text_margin"
-                        android:textSize="@dimen/title_size1"
-                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Schools :"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/poppinsbold"/>
+                        android:textSize="@dimen/title_size1" />
 
-                    <com.google.android.material.card.MaterialCardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
+                        android:orientation="vertical">
 
-                        <LinearLayout
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#fff"
-                            android:orientation="vertical">
+                            android:layout_margin="10dp"
+                            android:background="@color/backgroundCol">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@font/poppinsemibold"
                                 android:text="@string/sasl"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/black"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/poppinsemibold"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size1" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@color/backgroundCol">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@font/poppinsemibold"
                                 android:text="@string/sbio"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/black"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/poppinsemibold"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size1" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@color/backgroundCol">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="School of Computer Science"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:textColor="@color/black"
                                 android:layout_margin="8dp"
-                                android:fontFamily="@font/poppinsemibold"/>
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="@string/scse"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size1" />
+                        </com.google.android.material.card.MaterialCardView>
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@color/backgroundCol">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@font/poppinsemibold"
                                 android:text="@string/seee"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:textColor="@color/black"
-                                android:layout_margin="8dp"
-                                android:fontFamily="@font/poppinsemibold"/>
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size1" />
+                        </com.google.android.material.card.MaterialCardView>
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="2dp"
-                                android:background="@color/grey"/>
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@color/backgroundCol">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/smee"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:textSize="@dimen/text_size1"
-                                android:textColor="@color/black"
                                 android:layout_margin="8dp"
-                                android:fontFamily="@font/poppinsemibold"/>
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@font/poppinsemibold"
+                                android:text="@string/smee"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size1" />
+                        </com.google.android.material.card.MaterialCardView>
 
-                        </LinearLayout>
 
+                    </LinearLayout>
 
-                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
             </LinearLayout>
 
@@ -236,51 +246,48 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Details :"
-                    android:layout_marginTop="36dp"
-                    android:textSize="@dimen/title_size1"
                     android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppinsemibold"
+                    android:text="Contact Details :"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/poppinsemibold"/>
+                    android:textSize="@dimen/title_size1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:fontFamily="@font/poppinsmedium"
                     android:text="Vellore Institute of Technology, Bhopal"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:textSize="@dimen/text_size1"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:textSize="@dimen/text_size1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:fontFamily="@font/poppinsmedium"
                     android:text="@string/clg_address"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:textSize="@dimen/text_size1"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:textSize="@dimen/text_size1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/clg_phone"
+                    android:layout_marginHorizontal="12dp"
                     android:layout_marginTop="@dimen/text_margin"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:textSize="@dimen/text_size1"
-                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="@string/clg_phone"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@font/poppinsmedium"/>
+                    android:textSize="@dimen/text_size1" />
 
                 <ImageView
                     android:id="@+id/map"
                     android:layout_width="wrap_content"
                     android:layout_height="230dp"
-                    android:src="@drawable/clgmap"/>
+                    android:src="@drawable/clgmap" />
 
 
             </LinearLayout>

@@ -68,8 +68,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         list = new ArrayList<>();
-        list.add(new BranchModel(R.drawable.aero_icon, "B.Tech Aerospace Engineering (BAS)"));
-        list.add(new BranchModel(R.drawable.bio_icon, "B.Tech Bioengineering (BOE)"));
+
 
         list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (BCE)"));
         list.add(new BranchModel(R.drawable.cse_icon, "B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning) (BAI)"));
@@ -85,6 +84,8 @@ public class HomeFragment extends Fragment {
 
         list.add(new BranchModel(R.drawable.mech_icon, "B.Tech Mechanical Engineering (BME)"));
         list.add(new BranchModel(R.drawable.mech_icon, "B.Tech Mechanical Engineering (Artificial Intelligence & Robotics) (BMR)"));
+        list.add(new BranchModel(R.drawable.aero_icon, "B.Tech Aerospace Engineering (BAS)"));
+        list.add(new BranchModel(R.drawable.bio_icon, "B.Tech Bioengineering (BOE)"));
 
         // adapter
         branchAdapter = new BranchAdapter(getContext(), list);
