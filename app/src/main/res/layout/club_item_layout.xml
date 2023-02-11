@@ -25,7 +25,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:layout_marginTop="1dp"
                 android:gravity="center_horizontal"
@@ -45,7 +45,7 @@
                     android:id="@+id/facultyDesignation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="2dp"
                     android:text="@string/facCoord"
                     android:padding="2dp"
                     android:fontFamily="@font/poppinsmedium"
@@ -67,7 +67,7 @@
                     android:id="@+id/student"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="2dp"
                     android:text="Student Coordinator : "
                     android:padding="2dp"
                     android:fontFamily="@font/poppinsmedium"

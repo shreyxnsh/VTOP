@@ -53,7 +53,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clubsRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/club_search" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
