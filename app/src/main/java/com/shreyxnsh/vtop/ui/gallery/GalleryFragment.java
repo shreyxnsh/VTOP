@@ -25,7 +25,7 @@ import java.util.List;
 
 public class GalleryFragment extends Fragment {
 
-  RecyclerView convoRV, advityaRV, vicharRV, aadhavRV;
+  RecyclerView convoRV, advityaRV, vicharRV, aadhavRV,shirleyRV, codegarudaRV, murderRV, dancetourRV;
   GalleryAdapter adapter;
   DatabaseReference reference;
 
@@ -38,8 +38,12 @@ public class GalleryFragment extends Fragment {
 
         convoRV = view.findViewById(R.id.convoRV);
         advityaRV = view.findViewById(R.id.advityaRV);
-        vicharRV = view.findViewById(R.id.vicharRV);
+        vicharRV = view.findViewById(R.id.vivaanRV);
         aadhavRV = view.findViewById(R.id.aadhavRV);
+        shirleyRV = view.findViewById(R.id.shirleyRV);
+        codegarudaRV = view.findViewById(R.id.codegarudaRV);
+        murderRV = view.findViewById(R.id.murderRV);
+        dancetourRV = view.findViewById(R.id.dancetourRV);
 
         reference = FirebaseDatabase.getInstance().getReference().child("gallery");
         reference.keepSynced(true);
@@ -48,9 +52,108 @@ public class GalleryFragment extends Fragment {
         getConvoImage();
         getAdvityaImage();
         getVivaanImage();
+        getShirleyImage();
+        getDanceTourImage();
+        getMurderRV();
+        getCodeGarudaRV();
 
         return view;
     }
+
+    private void getDanceTourImage() {
+        reference.child("DanceTour").addValueEventListener(new ValueEventListener() {
+
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                //setting layout manager in recyclerView
+                dancetourRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                dancetourRV.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    private void getCodeGarudaRV() {
+        reference.child("CodeGaruda").addValueEventListener(new ValueEventListener() {
+
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                //setting layout manager in recyclerView
+                codegarudaRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                codegarudaRV.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    private void getMurderRV() {
+        reference.child("MurderMystery").addValueEventListener(new ValueEventListener() {
+
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                //setting layout manager in recyclerView
+                murderRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                murderRV.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void getShirleyImage() {
+        reference.child("Shirley").addValueEventListener(new ValueEventListener() {
+
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                //setting layout manager in recyclerView
+                shirleyRV.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                shirleyRV.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
     private void getAadhavImage() {
         reference.child("Aadhav ").addValueEventListener(new ValueEventListener() {
 

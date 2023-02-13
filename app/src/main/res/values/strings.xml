@@ -5,7 +5,8 @@
     <string name="start">Start</string>
     <string name="close">Close</string>
 
-    <string name="aboutclg">Vellore Institute of Technology (VIT) Bhopal is a prestigious institute of higher education located in Bhopal, Madhya Pradesh. Established in 2017, VIT Bhopal has quickly risen to become a top choice for students seeking a quality education in engineering and technology.</string>
+    <string name="aboutclg">Welcome to VTOP! This is VIT Bhopal\'s unofficial application.</string>
+    <string name="aboutvtop">This app is made for all the students to tackle their day-to-day hassles in university procedures.If this application could help you by any means, please do share it with your friends &#129310;</string>
     <string name="clg_address">Address : VIT Bhopal University Bhopal-Indore Highway Kothrikalan, Sehore Madhya Pradesh – 466114</string>
     <string name="clg_phone">Phone : +91/0 75 6025 4500 / 501 / 502</string>
     <string name="acre">250 acres of sprawling lush green Campus strategically located on the Indore – Bhopal Highway, the two cleanest cities in the country</string>
@@ -45,7 +46,7 @@
     <string name="sbio">School of Biosciences, Engineering and Technology</string>
     <string name="seee"><![CDATA[School of Electrical & Electronics Engineering]]></string>
     <string name="smee">School of Mechanical Engineering</string>
-    <string name="bund">Pratham Bundwani</string>
+    <string name="bund">Pratham Budhwani</string>
 
 
     <string name="stuCoord">Student Coordinator :</string>
