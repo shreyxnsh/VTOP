@@ -73,7 +73,7 @@
                             android:layout_height="120dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="0.5"
-                            android:src="@drawable/facultydemo" />
+                            android:src="@drawable/shreyanshimage" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -186,6 +186,15 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:fontFamily="@font/poppinsemibold"
+                android:text="Contributors  -> "
+                android:textColor="@color/titleColor"
+                android:textSize="24sp" />
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,81 +209,65 @@
                     android:id="@+id/bundrl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp">
+                    android:padding="8dp">
 
                     <LinearLayout
-                        android:id="@+id/bundinfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/bundphotu"
-                            android:layout_width="100dp"
-                            android:layout_height="120dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_weight="0.5"
-                            android:src="@drawable/facultydemo" />
+                        android:id="@+id/bundetails"
+                        android:orientation="vertical"
+                        android:layout_marginVertical="5dp"
+                        android:padding="3dp">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.2"
-                            android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/bund"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="25dp"
-                                android:fontFamily="@font/poppinsemibold"
-                                android:text="@string/bund"
-                                android:textAlignment="viewEnd"
-                                android:textColor="@color/white"
-                                android:textSize="22sp" />
-
-                            <TextView
-                                android:id="@+id/bundInfo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:fontFamily="@font/poppinsemibold"
-                                android:text="20 | Pune, India."
-                                android:textAlignment="textEnd"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/bundesc"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bundinfo"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/bundtext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppinsmedium"
-                            android:text="@string/intro"
-                            android:textColor="@color/white" />
+                            android:orientation="horizontal"
+                            android:weightSum="3">
 
+                            <LinearLayout
+                                android:layout_width="210dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:orientation="vertical">
 
+                                <TextView
+                                    android:id="@+id/bundName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:layout_marginTop="10dp"
+                                    android:text="@string/bund"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
 
+                                <TextView
+                                    android:id="@+id/bundInfo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:text="19 | Kanpur, India."
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/bundimage"
+                                android:layout_width="100dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1.5"
+                                android:src="@drawable/bundphotu" />
+                        </LinearLayout>
                     </LinearLayout>
 
+
                     <LinearLayout
-                        android:id="@+id/bundgl"
+                        android:id="@+id/bundid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/bundesc"
-                        android:layout_marginTop="20dp"
+                        android:layout_below="@id/bundetails"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
@@ -311,6 +304,223 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/nikkirl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nikkidetails"
+                        android:orientation="vertical"
+                        android:layout_marginVertical="5dp"
+                        android:padding="3dp">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="210dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/nikkiName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Nikita Raut"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/nikkiInfo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:text="20 | Nagpur, India."
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/nikkiimage"
+                                android:layout_width="100dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1.5"
+                                android:src="@drawable/nikki" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/nikkiid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nikkidetails"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/nikkigmail"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_gmail_svgrepo_com" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/nikkilink"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/nikkigith"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_githublogo" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbarCL"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/dallarl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dalladetails"
+                        android:orientation="vertical"
+                        android:layout_marginVertical="5dp"
+                        android:padding="3dp">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="210dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/dallaName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Syed Haider Abbas"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:id="@+id/dallaInfo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsemibold"
+                                    android:text="19 | Bhopal, India."
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/dallaimage"
+                                android:layout_width="100dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1.5"
+                                android:src="@drawable/dallaphotu" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/dallaid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dalladetails"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/dallagmail"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_gmail_svgrepo_com" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dallalink"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_linkedin" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/dallagith"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_githublogo" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
 
 
         </LinearLayout>
