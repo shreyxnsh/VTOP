@@ -48,6 +48,8 @@ public class NoticeFragment extends Fragment {
         noticeRV.setLayoutManager(new LinearLayoutManager(getContext()));
         noticeRV.setHasFixedSize(true);
 
+
+
         getNotice();
         return view;
     }

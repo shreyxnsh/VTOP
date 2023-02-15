@@ -1,25 +1,26 @@
 package com.shreyxnsh.vtop.ui.faculty;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -27,25 +28,30 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.shreyxnsh.vtop.MainActivity;
 import com.shreyxnsh.vtop.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
 
 public class FacultyFragment extends Fragment {
 
     private RecyclerView facultyRV;
-    private LinearLayout nodata;
     private List<FacultyData> facultyList;
     private FacultyAdapter adapter;
     private EditText faculty_search;
     private LottieAnimationView progressBar;
 
-    private DatabaseReference reference, dbRef;
+    private DatabaseReference reference;
+
+    LinearLayoutManager layoutManager;
+    private int currentPage = 1;
+    private int totalPages;
+    private static final int PAGE_SIZE = 10;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,168 +61,125 @@ public class FacultyFragment extends Fragment {
 
 
         facultyRV = view.findViewById(R.id.facultyListRV);
-
-        nodata = view.findViewById(R.id.NoData);
-
+        layoutManager = new LinearLayoutManager(getContext());
         progressBar = view.findViewById(R.id.progressBar);
 
         faculty_search = view.findViewById(R.id.faculty_search);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Faculty");
         reference.keepSynced(true);
+        getFacultyData();
 
-
-        MyAsyncTask myAsyncTask = new MyAsyncTask();
-        myAsyncTask.execute();
-
-
-
-
-//        addDataToList();
+//        facultyRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                    if (currentPage < totalPages) {
+//                        currentPage++;
+//                        loadMoreData();
+//                    }
+//                }
+//            }
+//        });
 
         return view;
 
     }
 
-    @SuppressLint("StaticFieldLeak")
-    public class MyAsyncTask extends AsyncTask<Void, Void, String>   {
+//    private void getFacultyData() {
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                reference.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        facultyList = new ArrayList<>();
+//                        if (!snapshot.exists()) {
+//                            facultyRV.setVisibility(View.GONE);
+//                        } else {
+//                            facultyRV.setVisibility(View.VISIBLE);
+//                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+//                                FacultyData data = dataSnapshot.getValue(FacultyData.class);
+//                                facultyList.add(0, data);
+//                            }
+//                                    facultyRV.setHasFixedSize(true);
+//                                    facultyRV.setLayoutManager(layoutManager);
+//                                    adapter = new FacultyAdapter(facultyList, getContext());
+//                                    facultyRV.setAdapter(adapter);
+//                                    progressBar.setVisibility(View.GONE);
+//
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                faculty_search.addTextChangedListener(new TextWatcher() {
+//                    @Override
+//                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                    }
+//
+//                    @Override
+//                    public void afterTextChanged(Editable editable) {
+//                        filter(editable.toString());
+//                    }
+//                });
+//            }
+//        }).start();
+//    }
 
-        @Override
-        protected String doInBackground(Void... voids) {
-            return null;
-        }
+    private void getFacultyData() {
+        progressBar.setVisibility(View.VISIBLE);
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            csDepartment();
-            mechDepartment();
-            eeeDepartment();
-            aslDepartment();
-        }
-    }
+        Query query = reference.orderByKey()
+                .startAt(String.valueOf((currentPage - 1) * PAGE_SIZE))
+                .limitToFirst(PAGE_SIZE);
 
-
-
-    private void csDepartment() {
-        dbRef = reference.child("SCSE");
-        dbRef.addValueEventListener(new ValueEventListener() {
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                list = new ArrayList<>();
                 facultyList = new ArrayList<>();
                 if (!snapshot.exists()) {
-                    nodata.setVisibility(View.VISIBLE);
                     facultyRV.setVisibility(View.GONE);
                 } else {
-                    nodata.setVisibility(View.GONE);
                     facultyRV.setVisibility(View.VISIBLE);
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         FacultyData data = dataSnapshot.getValue(FacultyData.class);
                         facultyList.add(0, data);
-//                        list.addAll(cseList);
                     }
                     facultyRV.setHasFixedSize(true);
-                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
+                    facultyRV.setLayoutManager(layoutManager);
                     adapter = new FacultyAdapter(facultyList, getContext());
                     facultyRV.setAdapter(adapter);
                     progressBar.setVisibility(View.GONE);
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+                    // calculate the total number of pages
+                    totalPages = (int) Math.ceil(snapshot.getChildrenCount() / (double) PAGE_SIZE);
 
-    private void mechDepartment() {
-        dbRef = reference.child("SMEC");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()) {
-                    nodata.setVisibility(View.VISIBLE);
-                    facultyRV.setVisibility(View.GONE);
-                } else {
-                    nodata.setVisibility(View.GONE);
-                    facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0, data);
-//                        list.addAll(mecList);
-
-                    }
-                    facultyRV.setHasFixedSize(true);
-                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(facultyList, getContext());
-                    facultyRV.setAdapter(adapter);
-                    progressBar.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void eeeDepartment() {
-        dbRef = reference.child("SEEE");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()) {
-                    nodata.setVisibility(View.VISIBLE);
-                    facultyRV.setVisibility(View.GONE);
-                } else {
-                    nodata.setVisibility(View.GONE);
-                    facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(data);
-//                        list.addAll(eeeList);
-                        progressBar.setVisibility(View.GONE);
-
-                    }
-                    facultyRV.setHasFixedSize(true);
-                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(facultyList, getContext());
-                    facultyRV.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void aslDepartment() {
-        dbRef = reference.child("SASL");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()) {
-                    nodata.setVisibility(View.VISIBLE);
-                    facultyRV.setVisibility(View.GONE);
-                } else {
-                    nodata.setVisibility(View.GONE);
-                    facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0, data);
-//                        list.addAll(aslList);
-
-                    }
-                    facultyRV.setHasFixedSize(true);
-                    facultyRV.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new FacultyAdapter(facultyList, getContext());
-                    facultyRV.setAdapter(adapter);
-                    progressBar.setVisibility(View.GONE);
+                    // add scroll listener to the RecyclerView to detect when the user has reached the end of the current page
+                    facultyRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                        @Override
+                        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                            super.onScrollStateChanged(recyclerView, newState);
+                            if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                                if (currentPage < totalPages) {
+                                    currentPage++;
+                                    loadMoreData();
+                                }
+                            }
+                        }
+                    });
                 }
             }
 
@@ -226,7 +189,6 @@ public class FacultyFragment extends Fragment {
             }
         });
 
-        // searching pdf in edit text view
         faculty_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -244,6 +206,67 @@ public class FacultyFragment extends Fragment {
             }
         });
     }
+
+//    private void loadMoreData() {
+//        progressBar.setVisibility(View.VISIBLE);
+//
+//        Query query = reference.orderByKey()
+//                .startAt(String.valueOf(currentPage * PAGE_SIZE))
+//                .limitToFirst(PAGE_SIZE);
+//
+//        query.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if (!snapshot.exists()) {
+//                    facultyRV.setVisibility(View.GONE);
+//                } else {
+//                    currentPage++;
+//                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+//                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
+//                        facultyList.add(0, data);
+//                    }
+//                    adapter.notifyDataSetChanged();
+//                    progressBar.setVisibility(View.GONE);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
+
+    private void loadMoreData() {
+        progressBar.setVisibility(View.VISIBLE);
+
+        Query query = reference.orderByKey()
+                .startAt(facultyList.get(facultyList.size() - 1).getKey())
+                .limitToFirst(PAGE_SIZE);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    facultyRV.setVisibility(View.GONE);
+                } else {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
+                        facultyList.add(data);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     private void filter(String text) {
         ArrayList<FacultyData> filterList = new ArrayList<>();

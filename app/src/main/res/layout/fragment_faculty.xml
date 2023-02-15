@@ -40,26 +40,19 @@
                 android:nestedScrollingEnabled="false"
                 android:visibility="gone" />
 
-            <LinearLayout
-                android:id="@+id/NoData"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <include layout="@layout/no_data_found" />
-            </LinearLayout>
 
         </LinearLayout>
+
+
 
     </androidx.core.widget.NestedScrollView>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        app:layout_constraintVertical_bias="0.224"
         app:lottie_autoPlay="true"
         app:lottie_fileName="pr1.json"
         app:lottie_loop="true" />

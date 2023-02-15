@@ -38,6 +38,7 @@ import com.shreyxnsh.vtop.ui.feedbacks.FeedbackActivity;
 import com.shreyxnsh.vtop.ui.gallery.GalleryFragment;
 import com.shreyxnsh.vtop.ui.gpacalc.GpaCalculator;
 import com.shreyxnsh.vtop.ui.home.HomeFragment;
+import com.shreyxnsh.vtop.ui.notice.NoticeData;
 import com.shreyxnsh.vtop.ui.notice.NoticeFragment;
 
 import java.util.Objects;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         contentView = findViewById(R.id.contentView);
         toolbar = findViewById(R.id.appbar);
 
+        NoticeData noticeData = new NoticeData();
 
         sharedPreferences = this.getSharedPreferences("themes", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -107,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigation();
         bottomNavigation();
+
+        NoticeData notificationSender = new NoticeData("/topics/all", noticeData.getTitle(),noticeData.getTitle(),getApplicationContext(),MainActivity.this);
+        notificationSender.SendNotifications();
 
 
         //bottom nav code for onClickListener

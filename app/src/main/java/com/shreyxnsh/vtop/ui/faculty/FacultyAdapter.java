@@ -32,6 +32,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         this.context = context;
     }
 
+
     @NonNull
     @Override
     public FacultyViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,19 +53,25 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
 
     @Override
     public void onBindViewHolder(@NonNull FacultyViewAdapter holder, int position) {
+
         FacultyData item = list.get(position);
         holder.name.setText(item.getName());
         holder.email.setText(item.getEmail());
         holder.designation.setText(item.getDesignation());
         holder.cabin.setText(item.getCabin());
 
-                try {
-                    Picasso.get().load(item.getImage()).into(holder.image);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        try {
+            Picasso.get().load(item.getImage()).into(holder.image);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
+
+    public void addNewData(List<FacultyData> subList) {
+    }
+
 
 
     public class FacultyViewAdapter extends RecyclerView.ViewHolder {
