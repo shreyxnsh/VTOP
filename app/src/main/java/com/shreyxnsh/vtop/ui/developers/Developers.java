@@ -21,9 +21,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Developers extends AppCompatActivity {
 
     private Uri uri;
-    private ImageView gmail;
-    private CircleImageView linkedin;
-    private CircleImageView github;
+    private ImageView gmail, bundgmail, nikkigmail, syedgmail;
+    private CircleImageView linkedin, bundlink, nikkilink, syedlink;
+    private CircleImageView github, bundgit, nikkigit, syedgit;
     private Intent intent;
     private Toolbar toolbar;
 
@@ -42,6 +42,15 @@ public class Developers extends AppCompatActivity {
         gmail = findViewById(R.id.gmail);
         linkedin = findViewById(R.id.linkedin);
         github = findViewById(R.id.github);
+        bundgmail = findViewById(R.id.gmail);
+        bundlink = findViewById(R.id.linkedin);
+        bundgit = findViewById(R.id.github);
+        nikkigmail = findViewById(R.id.gmail);
+        nikkilink = findViewById(R.id.linkedin);
+        nikkigit = findViewById(R.id.github);
+        syedgmail = findViewById(R.id.gmail);
+        syedlink = findViewById(R.id.linkedin);
+        syedgit = findViewById(R.id.github);
 
         //buttons to visit the links
         gmail.setOnClickListener(new View.OnClickListener() {
@@ -68,5 +77,81 @@ public class Developers extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bundgmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("mailto:pratham.budhwani2021@vitbhopal.ac.in");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        bundlink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://www.linkedin.com/in/pratham-budhwani-045aa41b6/");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        bundgit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/PrathamBudhwani");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        nikkigmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("mailto:nikita.raut2021@vitbhopal.ac.in");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        nikkilink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://www.linkedin.com/in/nikita-raut-700b51214/");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        nikkigit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/nikita-raut");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        syedgmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("mailto:syed.abbas2021@vitbhopal.ac.in");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        syedlink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse(getString(R.string.linkedinlink));
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        syedgit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse(getString(R.string.githublink));
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
