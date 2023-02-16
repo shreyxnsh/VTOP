@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.shreyxnsh.vtop.FullImageView;
 import com.shreyxnsh.vtop.R;
 import com.squareup.picasso.Picasso;
@@ -35,17 +36,17 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GalleryViewAdapter holder, final int position) {
-        //show the image
+    public void onBindViewHolder(@NonNull GalleryViewAdapter holder, int position) {
+
         Picasso.get().load(images.get(position)).into(holder.imageView);
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, FullImageView.class);
-                intent.putExtra("image",images.get(position));
-                context.startActivity(intent);
-            }
-        });
+//        holder.imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, FullImageView.class);
+//                intent.putExtra("image",images.get(position));
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
 

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.shreyxnsh.vtop.FullImageView;
 import com.shreyxnsh.vtop.R;
 import com.squareup.picasso.Picasso;
@@ -43,6 +45,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
     @Override
     public void onBindViewHolder(@NonNull NoticeViewAdapter holder, @SuppressLint("RecyclerView") int position) {
         //getting data from NoticeData class in currentItem variable in onBind method
+        position = holder.getAdapterPosition();
         NoticeData currentItem = list.get(position);
         //setting title of notice
         holder.noticeTitle.setText(currentItem.getTitle());
@@ -51,7 +54,10 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
         //setting notice image via Picasso and surrounding by try catch to handle exceptions
         try {
             if (currentItem.getImage() != null)
-                Picasso.get().load(currentItem.getImage()).into(holder.noticeImage);
+                Glide.with(context)
+                        .load(currentItem.getImage())
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(holder.noticeImage);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +66,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, FullImageView.class);
-                intent.putExtra("image",currentItem.getImage());
+                intent.putExtra("image", currentItem.getImage());
                 context.startActivity(intent);
             }
         });

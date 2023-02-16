@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.card.MaterialCardView;
 import com.shreyxnsh.vtop.R;
 import com.squareup.picasso.Picasso;
@@ -54,6 +56,8 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
     @Override
     public void onBindViewHolder(@NonNull FacultyViewAdapter holder, int position) {
 
+        position = holder.getAdapterPosition();
+
         FacultyData item = list.get(position);
         holder.name.setText(item.getName());
         holder.email.setText(item.getEmail());
@@ -61,7 +65,11 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
         holder.cabin.setText(item.getCabin());
 
         try {
-            Picasso.get().load(item.getImage()).into(holder.image);
+            Glide.with(context)
+                    .load(item.getImage())
+                    .override(250,250)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.image);
         } catch (Exception e) {
             e.printStackTrace();
         }
