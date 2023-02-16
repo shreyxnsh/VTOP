@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.card.MaterialCardView;
 import com.shreyxnsh.vtop.R;
 import com.squareup.picasso.Picasso;
@@ -45,7 +48,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewAda
         holder.venue.setText(item.getVenue());
         holder.clubname.setText(item.getClubname());
         try {
-            Picasso.get().load(item.getImage()).into(holder.image);
+//            Picasso.get().load(item.getImage()).into(holder.image);
+            Glide.with(context)
+                    .load(item.getImage())
+                    .override(250,250)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.image);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
