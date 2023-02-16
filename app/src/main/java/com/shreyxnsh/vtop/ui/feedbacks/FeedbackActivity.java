@@ -66,11 +66,38 @@ public class FeedbackActivity extends AppCompatActivity {
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getFeedback();
+                checkValidation();
             }
         });
 
 
+
+    }
+
+    private void checkValidation() {
+        String name=edtname.getText().toString();
+        String number=edtnumber.getText().toString();
+        String email=edtemail.getText().toString();
+        String message=edtmessage.getText().toString();
+        String batch=spinner.getSelectedItem().toString();
+
+        if (name.isEmpty()){
+            edtname.setError("Empty");
+            edtname.requestFocus();
+        }else if(email.isEmpty()){
+            edtemail.setError("Empty");
+            edtemail.requestFocus();
+        }else if(number.isEmpty()){
+            edtnumber.setError("Empty");
+            edtnumber.requestFocus();
+        }else if(message.isEmpty()){
+            edtmessage.setError("Empty");
+            edtmessage.requestFocus();
+        }else if (batch.equals("Select Department")){
+            Toast.makeText(this, "Please select a department", Toast.LENGTH_SHORT).show();
+        }else{
+            getFeedback();
+        }
 
     }
 

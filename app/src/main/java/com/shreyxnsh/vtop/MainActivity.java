@@ -48,20 +48,20 @@ import kotlin.jvm.functions.Function1;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private MeowBottomNavigation bottomNavigationView;
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle toggle;
-    private NavigationView navigationView;
-    private Uri uri;
+    public MeowBottomNavigation bottomNavigationView;
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle toggle;
+    public NavigationView navigationView;
+    public Uri uri;
     ConstraintLayout contentView;
     static final float END_SCALE = 0.7f;
-    private Toolbar toolbar;
+    public Toolbar toolbar;
 
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
-    private int checkedItem;
-    private String selected;
-    private final String CHECKEDITEM  = "checked_item";
+    public SharedPreferences sharedPreferences;
+    public SharedPreferences.Editor editor;
+    public int checkedItem;
+    public String selected;
+    public final String CHECKEDITEM  = "checked_item";
 
 
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
@@ -110,8 +110,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigation();
         bottomNavigation();
 
-        NoticeData notificationSender = new NoticeData("/topics/all", noticeData.getTitle(),noticeData.getTitle(),getApplicationContext(),MainActivity.this);
-        notificationSender.SendNotifications();
 
 
         //bottom nav code for onClickListener
