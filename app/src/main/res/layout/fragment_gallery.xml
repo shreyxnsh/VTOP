@@ -13,6 +13,13 @@
         android:padding="12sp"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note : It takes some time to load images from the database. We're trying to fix it!"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/textColor"/>
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginVertical="8dp"
