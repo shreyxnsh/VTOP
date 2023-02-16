@@ -51,6 +51,10 @@ public class FacultyFragment extends Fragment {
     private int currentPage = 1;
     private int totalPages;
     private static final int PAGE_SIZE = 10;
+    int mPageEndOffset, mPageLimit;
+    Query deviceListQuery;
+
+
 
 
     @Override
@@ -70,6 +74,19 @@ public class FacultyFragment extends Fragment {
         reference.keepSynced(true);
         getFacultyData();
 
+
+        deviceListQuery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 //        facultyRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
 //            @Override
 //            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -87,185 +104,69 @@ public class FacultyFragment extends Fragment {
 
     }
 
-//    private void getFacultyData() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                reference.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        facultyList = new ArrayList<>();
-//                        if (!snapshot.exists()) {
-//                            facultyRV.setVisibility(View.GONE);
-//                        } else {
-//                            facultyRV.setVisibility(View.VISIBLE);
-//                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//                                FacultyData data = dataSnapshot.getValue(FacultyData.class);
-//                                facultyList.add(0, data);
-//                            }
-//                                    facultyRV.setHasFixedSize(true);
-//                                    facultyRV.setLayoutManager(layoutManager);
-//                                    adapter = new FacultyAdapter(facultyList, getContext());
-//                                    facultyRV.setAdapter(adapter);
-//                                    progressBar.setVisibility(View.GONE);
-//
-//
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//                faculty_search.addTextChangedListener(new TextWatcher() {
-//                    @Override
-//                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                    }
-//
-//                    @Override
-//                    public void afterTextChanged(Editable editable) {
-//                        filter(editable.toString());
-//                    }
-//                });
-//            }
-//        }).start();
-//    }
-
     private void getFacultyData() {
-        progressBar.setVisibility(View.VISIBLE);
 
-        Query query = reference.orderByKey()
-                .startAt(String.valueOf((currentPage - 1) * PAGE_SIZE))
-                .limitToFirst(PAGE_SIZE);
 
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
+        mPageEndOffset = 0;
+        mPageLimit = 10;
+
+
+        mPageEndOffset += mPageLimit;
+
+        deviceListQuery = reference.child("Faculty")
+                .orderByChild("key").limitToFirst(mPageLimit).startAt(mPageEndOffset);
+        new Thread(new Runnable() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                facultyList = new ArrayList<>();
-                if (!snapshot.exists()) {
-                    facultyRV.setVisibility(View.GONE);
-                } else {
-                    facultyRV.setVisibility(View.VISIBLE);
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(0, data);
-                    }
-                    facultyRV.setHasFixedSize(true);
-                    facultyRV.setLayoutManager(layoutManager);
-                    adapter = new FacultyAdapter(facultyList, getContext());
-                    facultyRV.setAdapter(adapter);
-                    progressBar.setVisibility(View.GONE);
-
-                    // calculate the total number of pages
-                    totalPages = (int) Math.ceil(snapshot.getChildrenCount() / (double) PAGE_SIZE);
-
-                    // add scroll listener to the RecyclerView to detect when the user has reached the end of the current page
-                    facultyRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                        @Override
-                        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                            super.onScrollStateChanged(recyclerView, newState);
-                            if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                                if (currentPage < totalPages) {
-                                    currentPage++;
-                                    loadMoreData();
-                                }
+            public void run() {
+                reference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        facultyList = new ArrayList<>();
+                        if (!snapshot.exists()) {
+                            facultyRV.setVisibility(View.GONE);
+                        } else {
+                            facultyRV.setVisibility(View.VISIBLE);
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                FacultyData data = dataSnapshot.getValue(FacultyData.class);
+                                facultyList.add(0, data);
                             }
+                                    facultyRV.setHasFixedSize(true);
+                                    facultyRV.setLayoutManager(layoutManager);
+                                    adapter = new FacultyAdapter(facultyList, getContext());
+                                    facultyRV.setAdapter(adapter);
+                                    progressBar.setVisibility(View.GONE);
+
+
                         }
-                    });
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        faculty_search.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                filter(editable.toString());
-            }
-        });
-    }
-
-//    private void loadMoreData() {
-//        progressBar.setVisibility(View.VISIBLE);
-//
-//        Query query = reference.orderByKey()
-//                .startAt(String.valueOf(currentPage * PAGE_SIZE))
-//                .limitToFirst(PAGE_SIZE);
-//
-//        query.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (!snapshot.exists()) {
-//                    facultyRV.setVisibility(View.GONE);
-//                } else {
-//                    currentPage++;
-//                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-//                        facultyList.add(0, data);
-//                    }
-//                    adapter.notifyDataSetChanged();
-//                    progressBar.setVisibility(View.GONE);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//    }
-
-    private void loadMoreData() {
-        progressBar.setVisibility(View.VISIBLE);
-
-        Query query = reference.orderByKey()
-                .startAt(facultyList.get(facultyList.size() - 1).getKey())
-                .limitToFirst(PAGE_SIZE);
-
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()) {
-                    facultyRV.setVisibility(View.GONE);
-                } else {
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        FacultyData data = dataSnapshot.getValue(FacultyData.class);
-                        facultyList.add(data);
                     }
-                    adapter.notifyDataSetChanged();
-                }
-                progressBar.setVisibility(View.GONE);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                faculty_search.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+                        filter(editable.toString());
+                    }
+                });
             }
-        });
+        }).start();
     }
+
+
 
 
     private void filter(String text) {

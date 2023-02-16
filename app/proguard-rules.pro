@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.shreyxnsh.vtop.MainActivity
+-keep class com.shreyxnsh.vtop.FullImageView
+-keep class com.shreyxnsh.vtop.OfflineData
+-keep class com.shreyxnsh.vtop.SplashScreen
+-keep class com.shreyxnsh.vtop.ui.*
+-keep class com.shreyxnsh.vtop.ebook.*
+-keep class com.shreyxnsh.vtop.onboarding.*
