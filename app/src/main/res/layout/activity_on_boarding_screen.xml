@@ -31,7 +31,7 @@
             android:layout_height="60dp"
             android:visibility="invisible"
             android:layout_centerHorizontal="true"
-            android:backgroundTint="#6278FF"
+            android:backgroundTint="@color/appIconTint"
             android:text="@string/getStarted"
             android:textColor="@color/white"
             app:cornerRadius="10dp" />
@@ -55,7 +55,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:src="@drawable/next_btn"
-            app:backgroundTint="@color/purple_blue"
+            app:backgroundTint="@color/appIconTint"
             android:onClick="next"
             tools:ignore="RelativeOverlap"
             android:contentDescription="Next Button" />
