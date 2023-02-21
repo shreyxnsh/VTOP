@@ -42,15 +42,15 @@ public class Developers extends AppCompatActivity {
         gmail = findViewById(R.id.gmail);
         linkedin = findViewById(R.id.linkedin);
         github = findViewById(R.id.github);
-        bundgmail = findViewById(R.id.gmail);
-        bundlink = findViewById(R.id.linkedin);
-        bundgit = findViewById(R.id.github);
-        nikkigmail = findViewById(R.id.gmail);
-        nikkilink = findViewById(R.id.linkedin);
-        nikkigit = findViewById(R.id.github);
-        syedgmail = findViewById(R.id.gmail);
-        syedlink = findViewById(R.id.linkedin);
-        syedgit = findViewById(R.id.github);
+        bundgmail = findViewById(R.id.bundgmail);
+        bundlink = findViewById(R.id.bundlink);
+        bundgit = findViewById(R.id.bundgith);
+        nikkigmail = findViewById(R.id.nikkigmail);
+        nikkilink = findViewById(R.id.nikkilink);
+        nikkigit = findViewById(R.id.nikkigith);
+        syedgmail = findViewById(R.id.dallagmail);
+        syedlink = findViewById(R.id.dallalink);
+        syedgit = findViewById(R.id.dallagith);
 
         //buttons to visit the links
         gmail.setOnClickListener(new View.OnClickListener() {

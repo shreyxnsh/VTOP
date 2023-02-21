@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:backgroundTint="@color/appIconTint"
             android:text="@string/getStarted"
-            android:textColor="@color/white"
+            android:textColor="@color/btntext"
             app:cornerRadius="10dp" />
 
         <LinearLayout

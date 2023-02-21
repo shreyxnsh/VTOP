@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         FirebaseMessaging.getInstance().subscribeToTopic("notification");
+        FirebaseMessaging.getInstance().subscribeToTopic("notice");
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -251,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "VTOP");
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.instagram.android" + getApplicationContext().getPackageName());
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Download VTOP - VIT Bhopal and take charge of your college experience : " + "https://play.google.com/store/apps/details?id=com.shreyxnsh.vtop");
                     startActivity(Intent.createChooser(shareIntent, "Share via :"));
                 } catch (Exception e) {
                     Toast.makeText(this, "Unable to share the application", Toast.LENGTH_SHORT).show();
@@ -259,8 +260,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.navigation_rate:
-                Uri rate_uri = Uri.parse("https://play.google.com/store/apps/details?id=com.deepanshuchaudhary.apps.minivtop" + getApplicationContext().getPackageName());
-                Intent rate_intent = new Intent(Intent.ACTION_VIEW, uri);
+                Uri rate_uri = Uri.parse("https://play.google.com/store/apps/details?id=com.shreyxnsh.vtop");
+                Intent rate_intent = new Intent(Intent.ACTION_VIEW, rate_uri);
                 try {
                     startActivity(rate_intent);
                 } catch (Exception e) {

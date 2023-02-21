@@ -8,6 +8,7 @@
 
     <color name="iconColor">#000000</color>
     <color name="textColor">#000000</color>
+    <color name="btntext">#fff</color>
     <color name="grey">#828080</color>
     <color name="grey1">#4f4f4f</color>
     <color name="grey2">#d6d6d6</color>

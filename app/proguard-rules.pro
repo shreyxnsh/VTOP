@@ -34,7 +34,7 @@
 -keepnames class javax.servlet.** { *; }
 -keepnames class org.ietf.jgss.** { *; }
 -dontwarn org.w3c.dom.**
--dontwarn org.joda.time.**
+-dontwarn org.joda.time.**wh
 -dontwarn org.shaded.apache.**
 -dontwarn org.ietf.jgss.**
 

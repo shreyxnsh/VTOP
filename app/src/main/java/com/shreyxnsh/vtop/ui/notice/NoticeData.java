@@ -20,9 +20,6 @@ import java.util.Map;
 
 public class NoticeData {
     String Title, image, date, time, key;
-    Context mContext;
-    Activity mActivity;
-    String userFcmToken;
 
     public NoticeData() {
     }
@@ -38,12 +35,6 @@ public class NoticeData {
         this.key = key;
     }
 
-    public NoticeData(String userFcmToken, String title, String body, Context mContext, Activity mActivity) {
-        this.userFcmToken = userFcmToken;
-        Title = title;
-        this.mContext = mContext;
-        this.mActivity = mActivity;
-    }
 
 
 
@@ -87,58 +78,7 @@ public class NoticeData {
         this.key = key;
     }
 
-    private RequestQueue requestQueue;
-    private final String postUrl = "https://fcm.googleapis.com/fcm/send";
-    private final String fcmServerKey ="AAAAFiVI5j8:APA91bEnFehdjH_EaSOiB4XxNlbo-_pLVgcKuFYxKtbyzKXWs1Mgd3_zQMCrewm3JRAd4-FnhxGXGynSNiJz4bHkTyAyhTlnJhF3Iwv6MIAnuk_ll583k3SRk7_8ONoBD6HYIiz-Wgec";
-
-    public void SendNotifications() {
-
-        requestQueue = Volley.newRequestQueue(mActivity);
-        JSONObject mainObj = new JSONObject();
-        try {
-            mainObj.put("to", userFcmToken);
-            JSONObject notiObject = new JSONObject();
-            notiObject.put("title", "Notice Alert!");
-            notiObject.put("body", Title);
-            notiObject.put("icon", R.drawable.vtopdarkblue); // enter icon that exists in drawable only
 
 
 
-            mainObj.put("notification", notiObject);
-
-
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, postUrl, mainObj, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-
-                    // code run is got response
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    // code run is got error
-
-                }
-            }) {
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-
-
-                    Map<String, String> header = new HashMap<>();
-                    header.put("content-type", "application/json");
-                    header.put("authorization", "key=" + fcmServerKey);
-                    return header;
-
-
-                }
-            };
-            requestQueue.add(request);
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
