@@ -48,13 +48,8 @@ public class FacultyFragment extends Fragment {
     private DatabaseReference reference;
 
     LinearLayoutManager layoutManager;
-    private int currentPage = 1;
-    private int totalPages;
-    private static final int PAGE_SIZE = 10;
-    int mPageEndOffset, mPageLimit;
-    Query deviceListQuery;
-
-
+    final int limit = 10;
+    int start = 0;
 
 
     @Override
@@ -72,13 +67,13 @@ public class FacultyFragment extends Fragment {
 
         reference = FirebaseDatabase.getInstance().getReference().child("Faculty");
         reference.keepSynced(true);
-        getFacultyData();
 
-
-        deviceListQuery.addValueEventListener(new ValueEventListener() {
+        Query facultyQuery = reference.limitToFirst(limit).startAt(start);
+        facultyQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                getFacultyData();
+                start += (limit+1);
             }
 
             @Override
@@ -87,34 +82,11 @@ public class FacultyFragment extends Fragment {
             }
         });
 
-//        facultyRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-//                super.onScrollStateChanged(recyclerView, newState);
-//                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-//                    if (currentPage < totalPages) {
-//                        currentPage++;
-//                        loadMoreData();
-//                    }
-//                }
-//            }
-//        });
-
         return view;
-
     }
 
     private void getFacultyData() {
 
-
-        mPageEndOffset = 0;
-        mPageLimit = 10;
-
-
-        mPageEndOffset += mPageLimit;
-
-        deviceListQuery = reference.child("Faculty")
-                .orderByChild("key").limitToFirst(mPageLimit).startAt(mPageEndOffset);
         new Thread(new Runnable() {
             @Override
             public void run() {

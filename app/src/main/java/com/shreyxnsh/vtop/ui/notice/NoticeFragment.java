@@ -1,10 +1,18 @@
 package com.shreyxnsh.vtop.ui.notice;
 
+import static android.content.Context.CLIPBOARD_SERVICE;
+
+
+import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -31,7 +40,9 @@ public class NoticeFragment extends Fragment {
     private NoticeAdapter adapter;
     private DatabaseReference reference;
     private LottieAnimationView progress_anim;
+    private TextView noticeTitle;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,6 +58,19 @@ public class NoticeFragment extends Fragment {
 
         noticeRV.setLayoutManager(new LinearLayoutManager(getContext()));
         noticeRV.setHasFixedSize(true);
+
+//        noticeTitle = view.findViewById(R.id.noticeTitle);
+//        noticeTitle.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                ClipboardManager clipboardManager = (ClipboardManager) ContextCompat.getSystemService(getActivity(), CLIPBOARD_SERVICE);
+//                ClipData clip = ClipData.newPlainText("Faculty Details", noticeTitle.getText().toString());
+//                clipboardManager.setPrimaryClip(clip);
+//
+//                Toast.makeText(getActivity(), "Copied to clipboard", Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
+//        });
 
 
 
